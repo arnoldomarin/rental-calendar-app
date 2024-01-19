@@ -8,7 +8,7 @@ export default function Home() {
       <div className="w-full">
         <Navbar />
       </div>
-      <div>
+      <div className="w-full mt-5">
         <KPICards />
       </div>
     </main>
