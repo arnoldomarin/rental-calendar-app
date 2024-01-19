@@ -71,11 +71,33 @@ const KPICards = () => {
             title: 'Vehicles Available',
             value: 335,
             valueComplimentString: 'vehicles',
-            barData: 50
+            barData: (335/1750)*100, 
+            totalBarData: 1750
+        },
+        {    
+            title: 'Vehicles On Rent',
+            value: 781,
+            valueComplimentString: 'vehicles',
+            barData: (781/1302)*100, 
+            totalBarData: 1302
+        },
+        {    
+            title: 'Vehicles On Fleet',
+            value: 1302,
+            valueComplimentString: 'vehicles',
+            barData: (1302/1750)*100, 
+            totalBarData: 1750
+        },
+        {    
+            title: 'Rental Utilization',
+            value: 1302,
+            valueComplimentString: 'vehicles',
+            barData: (1302/1750)*100, 
+            totalBarData: 1750
         }
     ];
   return (
-    <div className='flex gap-5'>
+    <div className='mx-auto grid grid-cols-6 gap-4'>
         {kpiCards?.map((kpi) => (
             <KPICard kpi={kpi} key={`${kpi.title} + ${kpi.value}`}/>
         ))}

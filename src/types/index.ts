@@ -4,6 +4,7 @@ export interface kpiProps {
     valueComplimentString: string;
     chartData?: KPIChartData[];
     barData?: number;
+    totalBarData?: number;
 }
 
 export interface KPIChartData {
