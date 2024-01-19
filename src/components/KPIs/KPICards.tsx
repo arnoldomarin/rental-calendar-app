@@ -10,27 +10,27 @@ const KPICards = () => {
             valueComplimentString: 'rentals',
             chartData: [
                 {
-                    revenue: 50,
+                    rentals: 50,
                     subscription: 30,
                 },
                 {
-                    revenue: 20,
+                    rentals: 20,
                     subscription: 30,
                 },
                 {
-                    revenue: 25,
+                    rentals: 25,
                     subscription: 25,
                 },
                 {
-                    revenue: 40,
+                    rentals: 40,
                     subscription: 20,
                 },
                 {
-                    revenue: 55,
+                    rentals: 55,
                     subscription: 32,
                 },
                 {
-                    revenue: 50,
+                    rentals: 50,
                     subscription: 30,
                 },
             ]
@@ -42,27 +42,27 @@ const KPICards = () => {
             chartData: 
             [
                 {
-                    revenue: 30,
+                    rentals: 30,
                     subscription: 30,
                 },
                 {
-                    revenue: 20,
+                    rentals: 20,
                     subscription: 30,
                 },
                 {
-                    revenue: 25,
+                    rentals: 25,
                     subscription: 25,
                 },
                 {
-                    revenue: 38,
+                    rentals: 38,
                     subscription: 20,
                 },
                 {
-                    revenue: 35,
+                    rentals: 35,
                     subscription: 32,
                 },
                 {
-                    revenue: 20,
+                    rentals: 20,
                     subscription: 30,
                 },
             ]

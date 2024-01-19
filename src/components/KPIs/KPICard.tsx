@@ -9,7 +9,7 @@ import {
   } from "@/components/ui/card";
 import { kpiProps } from '@/types';
 
-import { Line, LineChart, ResponsiveContainer } from "recharts"
+import { Line, LineChart, ResponsiveContainer, AreaChart, XAxis, YAxis, Tooltip, Area, CartesianGrid } from "recharts"
 import { Progress } from "@/components/ui/progress"
 
 interface kpiCardProps {
@@ -44,13 +44,28 @@ const KPICard = ({ kpi } :  kpiCardProps) => {
                                 <Line
                                 type="monotone"
                                 strokeWidth={2}
-                                dataKey="revenue"
+                                dataKey="rentals"
                                 stroke="#5665f0"
                                 activeDot={{
                                     r: 6
                                 }}
                                 />
+                                <Tooltip />
                             </LineChart>
+                            {/* <AreaChart
+                                width={500}
+                                height={400}
+                                data={kpi.chartData}
+                                margin={{
+                                    top: 10,
+                                    right: 30,
+                                    left: 0,
+                                    bottom: 0,
+                                }}
+                                >
+                                <Tooltip />
+                                <Area type="monotone" dataKey="rentals" stroke="#5665f0" fill="#5665f0" />
+                                </AreaChart> */}
                         </ResponsiveContainer>
                     }
                     {kpi.barData &&

@@ -8,6 +8,6 @@ export interface kpiProps {
 }
 
 export interface KPIChartData {
-    revenue: number,
+    rentals: number,
     subscription: number,
 }
