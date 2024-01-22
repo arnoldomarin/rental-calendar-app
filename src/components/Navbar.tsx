@@ -14,6 +14,8 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
+import { Input } from "@/components/ui/input"
+
 const rentalGeneralLinks: { title: string; href: string; description: string }[] = [
   {
     title: "Rental Agreements",
@@ -90,12 +92,13 @@ const Navbar = () => {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Rental</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="p-4 md:w-[500px] lg:w-[600px]">
-                  <p className="text-sm leading-tight text-muted-foreground">
+                <div className="p-4 flex justify-between gap-10 align-middle">
+                  <p className="text-sm leading-tight text-muted-foreground md:w-[500px]">
                     This is a desciption of the rental group of dasboards. Here 
                     we should include a nice general description of the types of
                     dashboards that the user can find here
                   </p>
+                  <Input type="Dashboard" placeholder="Search for a dashboard..." className="md:w-[300px]"/>
                 </div>
                 <div className="flex">
                   <div>
