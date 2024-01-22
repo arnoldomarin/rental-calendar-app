@@ -74,3 +74,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+.main-navbar > div {
+  width: 100%;
+}
+
+.main-navbar > div ~ div {
+  width: 60%;
+}

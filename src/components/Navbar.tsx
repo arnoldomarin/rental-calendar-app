@@ -14,6 +14,36 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
+const rentalGeneralLinks: { title: string; href: string; description: string }[] = [
+  {
+    title: "Rental Agreements",
+    href: "/Rentals/RentalAgreements",
+    description:
+      "This is the description for the Rental Agreements. Here we would describe what is in the dashboard.",
+  },
+  {
+    title: "Rental Calendar",
+    href: "/Rentals/RentalCalendar",
+    description:
+      "This is the description for the Rental Calendar. Here we would describe what is in the dashboard.",
+  },
+  {
+    title: "Rental Customer Profile",
+    href: "/Rentals/RentalCustomerProfile",
+    description: "This is the description for the Rental Customer Profile. Here we would describe what is in the dashboard.",
+  },
+  {
+    title: "Rental Reservations",
+    href: "/Rentals/RentalReservations",
+    description: "This is the description for the Rental Reservations. Here we would describe what is in the dashboard.",
+  },
+  {
+    title: "Rental Rates",
+    href: "/Rentals/RentalRates",
+    description: "This is the description for the Rental Rates. Here we would describe what is in the dashboard.",
+  },
+]
+
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Alert Dialog",
@@ -54,127 +84,140 @@ const components: { title: string; href: string; description: string }[] = [
 
 const Navbar = () => {
     return (
-        <NavigationMenu>
-        <NavigationMenuList>
-          {/* <NavigationMenuItem>
-            <NavigationMenuTrigger>Rental</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                <li className="row-span-12">
-                  <NavigationMenuLink asChild>
-                    <a
-                      className="flex w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                      href="/"
-                    >
-                      <div className="mb-2 mt-4 text-lg font-medium">
-                        Rental
-                      </div>
-                      <p className="text-sm leading-tight text-muted-foreground">
-                        This is a desciption of the rental group of dasboards. Here 
-                        we should include a nice general description of the types of
-                        dashboards that the user can find here
-                      </p>
-                    </a>
-                  </NavigationMenuLink>
-                </li>
-                <div>
-                  {components.map((component) => (
-                    <ListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </ListItem>
-                  ))}
+        <NavigationMenu className="w-full main-navbar">
+        <NavigationMenuList className="flex justify-between w-full">
+          <div className="flex flex-row">
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Rental</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <div className="p-4 md:w-[500px] lg:w-[600px]">
+                  <p className="text-sm leading-tight text-muted-foreground">
+                    This is a desciption of the rental group of dasboards. Here 
+                    we should include a nice general description of the types of
+                    dashboards that the user can find here
+                  </p>
                 </div>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem> */}
+                <div className="flex">
+                  <div>
+                    <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                      General
+                    </p>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                      {rentalGeneralLinks.map((component) => (
+                        <ListItem
+                          key={component.title}
+                          title={component.title}
+                          href={component.href}
+                        >
+                          {component.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                      Rental Utilization
+                    </p>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                      {components.map((component) => (
+                        <ListItem
+                          key={component.title}
+                          title={component.title}
+                          href={component.href}
+                        >
+                          {component.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="flex">
+                  <div>
+                    <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                      Rental Invoices
+                    </p>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                      {components.map((component) => (
+                        <ListItem
+                          key={component.title}
+                          title={component.title}
+                          href={component.href}
+                        >
+                          {component.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                      Rental Revenue
+                    </p>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                      {components.map((component) => (
+                        <ListItem
+                          key={component.title}
+                          title={component.title}
+                          href={component.href}
+                        >
+                          {component.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Leasing</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <div className="p-4 md:w-[500px] lg:w-[600px]">
+                  <p className="text-sm leading-tight text-muted-foreground">
+                    This is a desciption of the rental group of dasboards. Here 
+                    we should include a nice general description of the types of
+                    dashboards that the user can find here
+                  </p>
+                </div>
+                <div className="flex">
+                  <div>
+                    <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                      General
+                    </p>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                      {rentalGeneralLinks.map((component) => (
+                        <ListItem
+                          key={component.title}
+                          title={component.title}
+                          href={component.href}
+                        >
+                          {component.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                      Lease Contracts
+                    </p>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                      {components.map((component) => (
+                        <ListItem
+                          key={component.title}
+                          title={component.title}
+                          href={component.href}
+                        >
+                          {component.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </div>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Rental</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <div className="p-4 md:w-[500px] lg:w-[600px]">
-                <p className="text-sm leading-tight text-muted-foreground">
-                  This is a desciption of the rental group of dasboards. Here 
-                  we should include a nice general description of the types of
-                  dashboards that the user can find here
-                </p>
-              </div>
-              <div className="flex">
-                <div>
-                  <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
-                    General
-                  </p>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                    {components.map((component) => (
-                      <ListItem
-                        key={component.title}
-                        title={component.title}
-                        href={component.href}
-                      >
-                        {component.description}
-                      </ListItem>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
-                    Rental Utilization
-                  </p>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                    {components.map((component) => (
-                      <ListItem
-                        key={component.title}
-                        title={component.title}
-                        href={component.href}
-                      >
-                        {component.description}
-                      </ListItem>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div className="flex">
-                <div>
-                  <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
-                    Rental Invoices
-                  </p>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                    {components.map((component) => (
-                      <ListItem
-                        key={component.title}
-                        title={component.title}
-                        href={component.href}
-                      >
-                        {component.description}
-                      </ListItem>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
-                    Rental Revenue
-                  </p>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                    {components.map((component) => (
-                      <ListItem
-                        key={component.title}
-                        title={component.title}
-                        href={component.href}
-                      >
-                        {component.description}
-                      </ListItem>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
+            <Link href="/UserProfile" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Documentation
+                User Profile
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
