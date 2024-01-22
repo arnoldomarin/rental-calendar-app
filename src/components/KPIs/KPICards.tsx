@@ -72,28 +72,44 @@ const KPICards = () => {
             value: 335,
             valueComplimentString: 'vehicles',
             barData: (335/1750)*100, 
-            totalBarData: 1750
+            totalBarData: 1750,
+            footerNumOne: 361,
+            footerTitleOne: 'Service Due Vehicles',
+            footerNumTwo: 62,
+            footerTitleTwo: 'Gnd. Recall Vehicles'
         },
         {    
             title: 'Vehicles On Rent',
             value: 781,
             valueComplimentString: 'vehicles',
             barData: (781/1302)*100, 
-            totalBarData: 1302
+            totalBarData: 1302,
+            footerNumOne: 361,
+            footerTitleOne: 'Vehicles On Schedule',
+            footerNumTwo: 62,
+            footerTitleTwo: 'Past Due Vehicles'
         },
         {    
             title: 'Vehicles On Fleet',
             value: 1302,
             valueComplimentString: 'vehicles',
             barData: (1302/1750)*100, 
-            totalBarData: 1750
+            totalBarData: 1750,
+            footerNumOne: 361,
+            footerTitleOne: 'Vehicles vs. Target',
+            footerNumTwo: 62,
+            footerTitleTwo: 'Vehicles vs. Last Year'
         },
         {    
             title: 'Rental Utilization',
             value: 1302,
             valueComplimentString: 'vehicles',
             barData: (1302/1750)*100, 
-            totalBarData: 1750
+            totalBarData: 1750,
+            footerNumOne: 361,
+            footerTitleOne: 'Vehicles vs. Target',
+            footerNumTwo: 62,
+            footerTitleTwo: 'Vehicles vs. Last Year'
         }
     ];
   return (

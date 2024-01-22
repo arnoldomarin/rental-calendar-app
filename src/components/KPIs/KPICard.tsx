@@ -9,7 +9,7 @@ import {
   } from "@/components/ui/card";
 import { kpiProps } from '@/types';
 
-import { Line, LineChart, ResponsiveContainer, AreaChart, XAxis, YAxis, Tooltip, Area, CartesianGrid } from "recharts"
+import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts"
 import { Progress } from "@/components/ui/progress"
 
 interface kpiCardProps {
@@ -31,7 +31,7 @@ const KPICard = ({ kpi } :  kpiCardProps) => {
                 </div>
                 <div className='pt-1 h-full'>
                     {kpi.chartData &&
-                        <ResponsiveContainer width={'99%'} height={100} className='mt-2'>
+                        <ResponsiveContainer width={'99%'} height={80} className='mt-2'>
                             <LineChart
                                 data={kpi.chartData}
                                 margin={{
@@ -74,14 +74,24 @@ const KPICard = ({ kpi } :  kpiCardProps) => {
                                 <Progress value={kpi.barData}  />
                                 <p className='text-xs mb-1 text-gray-700 opacity-50 self-end mt-1 font-semibold'>{kpi.totalBarData?.toLocaleString('en-US')}</p>
                             </div>
-                            <div className='flex justify-between mt-5'>
+                            {/* <div className='flex justify-between mt-5'>
                                 <div>
-                                    <p className='text-xs mb-1 text-df-purple self-end mt-1 font-semibold'>vs. Target</p>
-                                    <p className='text-sm mb-1 self-end mt-1 font-semibold'>{kpi.totalBarData?.toLocaleString('en-US')}</p>
+                                    <p className='text-xs mb-1 text-df-purple self-end mt-1 font-semibold'>{kpi.footerTitleOne}</p>
+                                    <p className='text-sm mb-1 self-end mt-1 font-semibold'>{kpi.footerNumOne?.toLocaleString('en-US')}</p>
                                 </div>
                                 <div>
-                                    <p className='text-xs mb-1 text-df-purple self-end mt-1 font-semibold'>vs. Last Year</p>
-                                    <p className='text-sm mb-1 self-end mt-1 font-semibold'>{kpi.totalBarData?.toLocaleString('en-US')}</p>
+                                    <p className='text-xs mb-1 text-df-purple self-end mt-1 font-semibold'>{kpi.footerTitleTwo}</p>
+                                    <p className='text-sm mb-1 self-end mt-1 font-semibold'>{kpi.footerNumTwo?.toLocaleString('en-US')}</p>
+                                </div>
+                            </div> */}
+                            <div className='flex flex-col mt-3'>
+                                <div className='flex mb-1'>
+                                    <p className='text-xs text-gray-700 opacity-50 self-end font-medium my-0'>{kpi.footerNumOne?.toLocaleString('en-US')}</p>
+                                    <p className='text-xs text-gray-700 opacity-50 self-end font-medium ms-1 mt-0'>{kpi.footerTitleOne}</p>
+                                </div>
+                                <div className='flex'>
+                                    <p className='text-xs text-gray-700 opacity-50 self-end font-medium my-0'>{kpi.footerNumTwo?.toLocaleString('en-US')}</p>
+                                    <p className='text-xs text-gray-700 opacity-50 self-end font-medium ms-1 my-0'>{kpi.footerTitleTwo}</p>
                                 </div>
                             </div>
                         </div>

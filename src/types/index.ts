@@ -5,6 +5,10 @@ export interface kpiProps {
     chartData?: KPIChartData[];
     barData?: number;
     totalBarData?: number;
+    footerTitleOne?: string;
+    footerNumOne?: number;
+    footerTitleTwo?: string;
+    footerNumTwo?: number;
 }
 
 export interface KPIChartData {
