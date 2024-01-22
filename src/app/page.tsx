@@ -1,6 +1,7 @@
 
 import KPICards from "@/components/KPIs/KPICards";
 import Navbar from "@/components/Navbar";
+import ResizableComponent from "@/components/Resizable/ResizableComponent";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
         <Navbar />
       </div>
       <div className="w-full mt-5">
-        <KPICards />
+        <ResizableComponent />
       </div>
     </main>
   );
