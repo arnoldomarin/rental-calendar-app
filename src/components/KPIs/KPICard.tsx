@@ -84,13 +84,13 @@ const KPICard = ({ kpi } :  kpiCardProps) => {
                                     <p className='text-sm mb-1 self-end mt-1 font-semibold'>{kpi.footerNumTwo?.toLocaleString('en-US')}</p>
                                 </div>
                             </div> */}
-                            <div className='flex flex-col mt-3'>
-                                <div className='flex mb-1'>
-                                    <p className='text-xs text-gray-700 opacity-50 self-end font-medium my-0'>{kpi.footerNumOne?.toLocaleString('en-US')}</p>
+                            <div className='flex flex-row mt-8 justify-between'>
+                                <div className='flex'>
+                                    <p className='text-xs self-end font-semibold my-0'>{kpi.footerNumOne?.toLocaleString('en-US')}</p>
                                     <p className='text-xs text-gray-700 opacity-50 self-end font-medium ms-1 mt-0'>{kpi.footerTitleOne}</p>
                                 </div>
                                 <div className='flex'>
-                                    <p className='text-xs text-gray-700 opacity-50 self-end font-medium my-0'>{kpi.footerNumTwo?.toLocaleString('en-US')}</p>
+                                    <p className='text-xs self-end font-semibold my-0'>{kpi.footerNumTwo?.toLocaleString('en-US')}</p>
                                     <p className='text-xs text-gray-700 opacity-50 self-end font-medium ms-1 my-0'>{kpi.footerTitleTwo}</p>
                                 </div>
                             </div>
