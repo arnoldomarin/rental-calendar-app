@@ -27,7 +27,7 @@ const KPICard = ({ kpi } :  kpiCardProps) => {
             <CardContent className='flex flex-col p-0'>
                 <div className='flex'>
                     <p className='pe-2 font-bold text-2xl'>{kpi.value}</p>
-                    <p className='text-xs self-end mb-1'>{kpi.valueComplimentString}</p>
+                    {/* <p className='text-xs self-end mb-1'>{kpi.valueComplimentString}</p> */}
                 </div>
                 <div className='pt-1 h-full'>
                     {kpi.chartData &&
