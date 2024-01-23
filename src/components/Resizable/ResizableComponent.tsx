@@ -11,11 +11,11 @@ import FiltersGroup from '../Filters/FiltersGroup'
 const ResizableComponent = () => {
   return (
     <div>
-        <ResizablePanelGroup direction="horizontal">
+        <ResizablePanelGroup direction="horizontal" className='align-middle'>
             <ResizablePanel>
                 <FiltersGroup />
             </ResizablePanel>
-        <ResizableHandle withHandle />
+        <ResizableHandle withHandle className='bg-transparent'/>
         <ResizablePanel minSize={80} >        
             <KPICards />
         </ResizablePanel>

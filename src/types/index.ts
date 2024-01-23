@@ -15,3 +15,23 @@ export interface KPIChartData {
     rentals: number,
     subscription: number,
 }
+
+export interface multiselectDropdownProps {
+    title: string;
+    options: dropdownOptions[];
+}
+
+export interface dropdownOptions {
+    title: string,
+    year: number,
+}
+
+export interface singleToggleFilterProps {
+    title: string;
+    isEnabled: boolean;
+}
+
+export interface singleToggleFiltersGroupProps {
+    sectionTitle: string;
+    toggleFilters: singleToggleFilterProps[];
+}
