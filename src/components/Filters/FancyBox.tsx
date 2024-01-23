@@ -147,27 +147,29 @@ export function FancyBox() {
   };
 
   return (
-    <div className="max-w-[200px]">
+    <div className="flex flex-col w-full">
+      <span className='font-semibold text-xs mb-1'>Branch</span>
       <Popover open={openCombobox} onOpenChange={onComboboxOpenChange}>
         <PopoverTrigger asChild>
           <Button
             variant="outline"
             role="combobox"
             aria-expanded={openCombobox}
-            className="w-[200px] justify-between text-foreground"
+            className="w-full justify-between text-foreground"
           >
             <span className="truncate">
-              {selectedValues.length === 0 && "Select labels"}
+              {selectedValues.length === 0 && "Select a branch"}
               {selectedValues.length === 1 && selectedValues[0].label}
               {selectedValues.length === 2 &&
                 selectedValues.map(({ label }) => label).join(", ")}
               {selectedValues.length > 2 &&
-                `${selectedValues.length} labels selected`}
+                `${selectedValues[0].label} +${selectedValues.length}`}
+                {/* `${selectedValues[0].label} ${selectedValues.length} Branches selected`} */}
             </span>
             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-[200px] p-0">
+        <PopoverContent className="w-min-content p-0">
           <Command loop>
             <CommandInput
               ref={inputRef}
@@ -197,6 +199,7 @@ export function FancyBox() {
                           " h-5 w-5",
                           isActive ? "opacity-100" : "opacity-0"
                         )}
+                        strokeWidth={3} 
                       />
                     </div>
                     <div className="flex-1">{framework.label}</div>
@@ -230,12 +233,12 @@ export function FancyBox() {
                     className="justify-center text-center"
                   >
                     <Trash className="mr-2 h-4 w-4" />
-                    Clear filters
+                    Clear Branches
                   </CommandItem>
                 </CommandGroup>
               </>
             )}
-            <CommandGroup>
+            {/* <CommandGroup>
               <CommandItem
                 value={`:${inputValue}:`} // HACK: that way, the edit button will always be shown
                 className="text-xs text-muted-foreground"
@@ -245,7 +248,7 @@ export function FancyBox() {
                 <Edit2 className="mr-2 h-2.5 w-2.5" />
                 Edit Labels
               </CommandItem>
-            </CommandGroup>
+            </CommandGroup> */}
           </Command>
         </PopoverContent>
       </Popover>
