@@ -12,6 +12,7 @@ import MultiSelectDropdown from './MultiSelectDropdown';
 import SingleToggleFilters from './SingleToggleFilters';
 
 import { HiOutlineArrowCircleRight, HiOutlineArrowCircleUp, HiOutlineArrowCircleDown } from "react-icons/hi";
+import { FancyBox } from './FancyBox';
 
   
 
@@ -178,6 +179,7 @@ const FiltersGroup = () => {
   return (
     <div className='pe-6'>
         <span className='font-bold text-md'>Filters</span>
+        <FancyBox />
         <Accordion type="multiple" className="w-full">
             <AccordionItem value="item-1">
                 <AccordionTrigger className='font-bold text-sm'>Rental Location</AccordionTrigger>
