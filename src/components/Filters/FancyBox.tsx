@@ -54,33 +54,33 @@ type Framework = Record<"value" | "label" | "color", string>;
 
 const FRAMEWORKS = [
   {
-    value: "next.js",
-    label: "Next.js",
+    value: "Edmonton West",
+    label: "Edmonton West",
     color: "#ef4444",
   },
   {
-    value: "sveltekit",
-    label: "SvelteKit",
+    value: "Edmonton South",
+    label: "Edmonton South",
     color: "#eab308",
   },
   {
-    value: "nuxt.js",
-    label: "Nuxt.js",
+    value: "Calgary",
+    label: "Calgary",
     color: "#22c55e",
   },
   {
-    value: "remix",
-    label: "Remix",
+    value: "Vancouver Island",
+    label: "Vancouver Island",
     color: "#06b6d4",
   },
   {
-    value: "astro",
-    label: "Astro",
+    value: "Winnipeg",
+    label: "Winnipeg",
     color: "#3b82f6",
   },
   {
-    value: "wordpress",
-    label: "WordPress",
+    value: "Leduc",
+    label: "Leduc",
     color: "#8b5cf6",
   },
 ] satisfies Framework[];
@@ -164,7 +164,7 @@ export function FancyBox() {
           <Command loop>
             <CommandInput
               ref={inputRef}
-              placeholder="Search framework..."
+              placeholder="Search for a branch..."
               value={inputValue}
               onValueChange={setInputValue}
             />
@@ -197,15 +197,19 @@ export function FancyBox() {
               />
             </CommandGroup>
             <CommandSeparator alwaysRender />
-            <CommandItem
-                  value={`:${inputValue}:`} // HACK: that way, the edit button will always be shown
-                  className="text-xs text-muted-foreground"
-                  onSelect={() => setSelectedValues([])}
-                >
-                <div className={cn("mr-2 h-4 w-4")} />
-                <Edit2 className="mr-2 h-2.5 w-2.5" />
-                Reset
-              </CommandItem>
+            {selectedValues.length > 0 && (
+              <>
+                <CommandSeparator />
+                <CommandGroup>
+                  <CommandItem
+                    onSelect={() => setSelectedValues([])}
+                    className="justify-center text-center"
+                  >
+                    Clear filters
+                  </CommandItem>
+                </CommandGroup>
+              </>
+            )}
             <CommandGroup>
               <CommandItem
                 value={`:${inputValue}:`} // HACK: that way, the edit button will always be shown
