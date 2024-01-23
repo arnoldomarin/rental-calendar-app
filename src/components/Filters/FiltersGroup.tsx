@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 
 import {
     Accordion,
@@ -143,12 +144,27 @@ const FiltersGroup = () => {
     const branchMultiselectDropdown = { title: 'Branch', options: top100Films };
     const rentalCustomerMultiselectDropdown = { title: 'Rental Customer', options: top100Films };
 
+    const [openRentals, setOpenRentals] = useState(true);
+    const [startingRentals, setStartingRentals] = useState(true);
+    const [endingRentals, setEndingRentals] = useState(true);
+
     const rentalStatusFilterGroup = {
         sectionTitle: 'Rental Status',
         toggleFilters: [
           {
             title: 'Open',
-            isEnabled: false
+            isEnabled: openRentals,
+            setFilter: setOpenRentals
+          },
+          {
+            title: 'Starting',
+            isEnabled: startingRentals,
+            setFilter: setStartingRentals
+          },
+          {
+            title: 'Ending',
+            isEnabled: endingRentals,
+            setFilter: setEndingRentals
           }
         ]
     };
@@ -175,7 +191,7 @@ const FiltersGroup = () => {
                         <MultiSelectDropdown multiselectDropdown={rentalCustomerMultiselectDropdown}/>
                     </FormControl>
                     <span className='font-semibold text-xs mb-1'>Rental Status</span>
-                    <SingleToggleFilters singleToggleFilterGroup={rentalStatusFilterGroup}/>
+                    <SingleToggleFilters singleToggleFilterGroup={rentalStatusFilterGroup} />
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">

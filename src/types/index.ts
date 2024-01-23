@@ -29,6 +29,7 @@ export interface dropdownOptions {
 export interface singleToggleFilterProps {
     title: string;
     isEnabled: boolean;
+    setFilter: (enabled:boolean) => void
 }
 
 export interface singleToggleFiltersGroupProps {

@@ -1,7 +1,6 @@
-'use client'
-
 import React from 'react';
 import { singleToggleFilterProps } from '@/types';
+import { Toggle } from "@/components/ui/toggle"
 
 
 interface SingleToggleFilterProps {
@@ -12,7 +11,9 @@ interface SingleToggleFilterProps {
 const SingleToggleFilter = ({ singleToggleFilter } :  SingleToggleFilterProps) => {
   return (
     <div className='w-full h-full'>
-        {singleToggleFilter.title}
+        <Toggle aria-label="Toggle bold" pressed={singleToggleFilter.isEnabled} onPressedChange={(value) => singleToggleFilter.setFilter(value)}>
+            {singleToggleFilter.title}
+        </Toggle>
     </div>
   )
 }
