@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Check, ChevronsUpDown, Edit2 } from "lucide-react";
+import { Check, ChevronsUpDown, Edit2, Plane, Trash, Warehouse } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import {
@@ -50,38 +50,44 @@ import { Label } from "@/components/ui/label";
 // FIXME: https://twitter.com/lemcii/status/1659649371162419202?s=46&t=gqNnMIjMWXiG2Rbrr5gT6g
 // Removing states would help maybe?
 
-type Framework = Record<"value" | "label" | "color", string>;
+type Framework = Record<"value" | "label" | "color" | "type", string>;
 
 const FRAMEWORKS = [
   {
     value: "Edmonton West",
     label: "Edmonton West",
     color: "#ef4444",
+    type: "normal"
   },
   {
-    value: "Edmonton South",
+    value: "Edmonton Aiport",
     label: "Edmonton South",
     color: "#eab308",
+    type: "airport"
   },
   {
     value: "Calgary",
     label: "Calgary",
     color: "#22c55e",
+    type: "normal"
   },
   {
     value: "Vancouver Island",
     label: "Vancouver Island",
     color: "#06b6d4",
+    type: "normal"
   },
   {
     value: "Winnipeg",
     label: "Winnipeg",
     color: "#3b82f6",
+    type: "normal"
   },
   {
     value: "Leduc",
     label: "Leduc",
     color: "#8b5cf6",
+    type: "normal"
   },
 ] satisfies Framework[];
 
@@ -104,6 +110,7 @@ export function FancyBox() {
       value: name.toLowerCase(),
       label: name,
       color: "#ffffff",
+      type: "normal"
     };
     setFrameworks((prev) => [...prev, newFramework]);
     setSelectedValues((prev) => [...prev, newFramework]);
@@ -177,17 +184,34 @@ export function FancyBox() {
                     value={framework.value}
                     onSelect={() => toggleFramework(framework)}
                   >
-                    <Check
-                      className={cn(
-                        "mr-2 h-4 w-4",
-                        isActive ? "opacity-100" : "opacity-0"
-                      )}
-                    />
-                    <div className="flex-1">{framework.label}</div>
                     <div
+                      className={cn(
+                        "mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-df-purple",
+                        isActive
+                          ? "bg-df-purple text-primary-foreground"
+                          : "opacity-50 [&_svg]:invisible"
+                      )}
+                    >
+                      <Check
+                        className={cn(
+                          " h-5 w-5",
+                          isActive ? "opacity-100" : "opacity-0"
+                        )}
+                      />
+                    </div>
+                    <div className="flex-1">{framework.label}</div>
+                    {/* <div
                       className="h-4 w-4 rounded-full"
                       style={{ backgroundColor: framework.color }}
-                    />
+                    /> */}
+                    {
+                      framework.type === "airport" &&
+                      <Plane className={"ms-1 h-5 w-5"}/>
+                    }
+                    {
+                      framework.type === "normal" &&
+                      <Warehouse className={"ms-1 h-5 w-5"}/>
+                    }
                   </CommandItem>
                 );
               })}
@@ -205,6 +229,7 @@ export function FancyBox() {
                     onSelect={() => setSelectedValues([])}
                     className="justify-center text-center"
                   >
+                    <Trash className="mr-2 h-4 w-4" />
                     Clear filters
                   </CommandItem>
                 </CommandGroup>
@@ -250,11 +275,12 @@ export function FancyBox() {
                   onSubmit={(e) => {
                     e.preventDefault();
                     const target = e.target as typeof e.target &
-                      Record<"name" | "color", { value: string }>;
+                      Record<"name" | "color" | "type", { value: string }>;
                     const newFramework = {
                       value: target.name.value.toLowerCase(),
                       label: target.name.value,
                       color: target.color.value,
+                      type: target.type.value,
                     };
                     updateFramework(framework, newFramework);
                   }}
