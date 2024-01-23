@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface kpiProps {
     title: string;
     value: number;
@@ -30,6 +32,7 @@ export interface singleToggleFilterProps {
     title: string;
     isEnabled: boolean;
     setFilter: (enabled:boolean) => void
+    icon: ReactNode
 }
 
 export interface singleToggleFiltersGroupProps {

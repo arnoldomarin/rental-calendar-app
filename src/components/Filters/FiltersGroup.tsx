@@ -10,6 +10,9 @@ import {
   import FormControl from '@mui/joy/FormControl';
 import MultiSelectDropdown from './MultiSelectDropdown';
 import SingleToggleFilters from './SingleToggleFilters';
+
+import { HiOutlineArrowCircleRight, HiOutlineArrowCircleUp, HiOutlineArrowCircleDown } from "react-icons/hi";
+
   
 
 const FiltersGroup = () => {
@@ -154,17 +157,20 @@ const FiltersGroup = () => {
           {
             title: 'Open',
             isEnabled: openRentals,
-            setFilter: setOpenRentals
+            setFilter: setOpenRentals,
+            icon: <HiOutlineArrowCircleRight size={30}/>
           },
           {
             title: 'Starting',
             isEnabled: startingRentals,
-            setFilter: setStartingRentals
+            setFilter: setStartingRentals,
+            icon: <HiOutlineArrowCircleUp size={30}/>
           },
           {
             title: 'Ending',
             isEnabled: endingRentals,
-            setFilter: setEndingRentals
+            setFilter: setEndingRentals,
+            icon: <HiOutlineArrowCircleDown size={30}/>
           }
         ]
     };
@@ -190,7 +196,6 @@ const FiltersGroup = () => {
                     <FormControl id="multiple-limit-tags" className="mt-2">
                         <MultiSelectDropdown multiselectDropdown={rentalCustomerMultiselectDropdown}/>
                     </FormControl>
-                    <span className='font-semibold text-xs mb-1'>Rental Status</span>
                     <SingleToggleFilters singleToggleFilterGroup={rentalStatusFilterGroup} />
                 </AccordionContent>
             </AccordionItem>
