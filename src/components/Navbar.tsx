@@ -16,6 +16,10 @@ import {
 
 import { Input } from "@/components/ui/input"
 
+import { useState, useEffect } from 'react';
+import io from 'socket.io-client';
+import axios, { AxiosResponse } from 'axios';
+
 const rentalGeneralLinks: { title: string; href: string; description: string }[] = [
   {
     title: "Rental Agreements",
@@ -84,7 +88,66 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ]
 
+interface WeatherData {
+  name: string;
+  main: {
+    temp: number;
+  };
+  weather: {
+    description: string;
+  }[];
+}
+
+interface ExchangeRate {
+  rates: Record<string, number>;
+  base: string;
+  date: string;
+}
+
 const Navbar = () => {
+
+  // const [exchangeRate, setExchangeRate] = useState<ExchangeRate | null>(null);
+
+  // useEffect(() => {
+  //   const socket = io('http://localhost:3001'); // Replace with your Socket.IO server endpoint
+
+  //   // Listen for real-time updates from the server
+  //   socket.on('updateExchangeRate', (newExchangeRate: ExchangeRate) => {
+  //     setExchangeRate(newExchangeRate);
+  //   });
+
+  //   // Fetch initial exchange rate data
+  //   const fetchExchangeRate = async () => {
+  //     try {
+  //       const response: AxiosResponse<ExchangeRate> = await axios.get(
+  //         'https://open.er-api.com/v6/latest'
+  //       );
+    
+  //       const initialExchangeRate: ExchangeRate = response.data;
+  //       setExchangeRate(initialExchangeRate);
+  //       socket.emit('initialExchangeRate', initialExchangeRate); // Emit the initial data to the server
+  //     } catch (error: any) {
+  //       if (axios.isAxiosError(error) && error.response) {
+  //         // Handle Axios errors with a response (e.g., status code is available)
+  //         console.error('Error fetching exchange rate data:', error.response.data);
+  //       } else {
+  //         // Handle other types of errors
+  //         console.error('Error fetching exchange rate data:', error.message);
+  //       }
+  //     }
+  //   };
+
+  //   fetchExchangeRate(); // Fetch initial data
+
+  //   // Cleanup function to disconnect the socket when the component is unmounted
+  //   socket.disconnect();
+  // }, []); // Empty dependency array to run the effect only once on mount
+
+  // if (!exchangeRate) {
+  //   return <div>Loading...</div>;
+  // }
+
+
     return (
         <NavigationMenu className="w-full main-navbar">
         <NavigationMenuList className="flex justify-between w-full">
@@ -226,6 +289,18 @@ const Navbar = () => {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
+    //   <div>
+    //   <h1>Real-Time Exchange Rate</h1>
+    //   <p>Base Currency: {exchangeRate.base}</p>
+    //   <p>Date: {exchangeRate.date}</p>
+    //   <ul>
+    //     {Object.entries(exchangeRate.rates).map(([currency, rate]) => (
+    //       <li key={currency}>
+    //         {currency}: {rate}
+    //       </li>
+    //     ))}
+    //   </ul>
+    // </div>
     )
   }
 

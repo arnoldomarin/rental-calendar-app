@@ -1,5 +1,3 @@
-
-import KPICards from "@/components/KPIs/KPICards";
 import Navbar from "@/components/Navbar";
 import ResizableComponent from "@/components/Resizable/ResizableComponent";
 

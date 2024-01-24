@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "server": "node server.js"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
@@ -21,18 +22,28 @@
     "@radix-ui/react-progress": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toggle": "^1.0.3",
+    "@types/ws": "^8.5.10",
+    "axios": "^1.6.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk": "^0.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
     "lucide-react": "^0.312.0",
-    "next": "14.1.0",
-    "react": "^18",
-    "react-dom": "^18",
+    "net": "^1.0.2",
+    "next": "^14.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
     "react-resizable-panels": "^1.0.9",
     "recharts": "^2.10.4",
+    "socket.io": "^4.7.4",
+    "socket.io-client": "^4.7.4",
     "tailwind-merge": "^2.2.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "tls": "^0.0.1",
+    "ws": "^8.16.0"
   },
   "devDependencies": {
     "@types/node": "^20",
