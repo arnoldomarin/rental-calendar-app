@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/resizable"
 import KPICards from '../KPIs/KPICards'
 import FiltersGroup from '../Filters/FiltersGroup'
+import QuickFilters from '../Filters/QuickFilters'
 
 const ResizableComponent = () => {
   return (
@@ -18,6 +19,7 @@ const ResizableComponent = () => {
         <ResizableHandle withHandle className='bg-transparent'/>
         <ResizablePanel minSize={80} >        
             <KPICards />
+            <QuickFilters />
         </ResizablePanel>
         </ResizablePanelGroup>
     </div>
