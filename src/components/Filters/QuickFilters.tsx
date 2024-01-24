@@ -43,31 +43,29 @@ const QuickFilters = () => {
     };
     
   return (
-    <div className='mx-5 px-10'>
+    <div className='mx-5 px-10 mt-5'>
         <Carousel
-        opts={{
-            align: "start",
-        }}
-        className="w-full max-w-sm"
+            opts={{align: "start",}}
+            className="w-full max-w-sm"
         >
-        <CarouselContent>
-            {rentalStatusFilterGroup.toggleFilters.map((filter) => (
-            <CarouselItem key={filter.title} className="md:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
-                    <div className='w-full h-full'>
-                        <Toggle aria-label="Toggle bold" pressed={filter.isEnabled} onPressedChange={(value) => filter.setFilter(value)} className='p-4 w-full h-full rounded-xl'>
-                            <div className='flex flex-col justify-center items-center align-middle'>
-                                {filter.icon}
-                                <div className='mt-2 text-sm'>
-                                    {filter.title}
+            <CarouselContent>
+                {rentalStatusFilterGroup.toggleFilters.map((filter) => (
+                <CarouselItem key={filter.title} className="md:basis-1/2 lg:basis-1/3">
+                    <div className="p-1">
+                        <div className='w-full h-full'>
+                            <Toggle aria-label="Toggle bold" pressed={filter.isEnabled} onPressedChange={(value) => filter.setFilter(value)} className='p-4 w-full h-full rounded-xl'>
+                                <div className='flex flex-col justify-center items-center align-middle'>
+                                    {filter.icon}
+                                    <div className='mt-2 text-sm'>
+                                        {filter.title}
+                                    </div>
                                 </div>
-                            </div>
-                        </Toggle>
+                            </Toggle>
+                        </div>
                     </div>
-                </div>
-            </CarouselItem>
-            ))}
-        </CarouselContent>
+                </CarouselItem>
+                ))}
+            </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
         </Carousel>
