@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/carousel";
 import { HiOutlineArrowCircleDown, HiOutlineArrowCircleRight, HiOutlineArrowCircleUp } from 'react-icons/hi';
 
+import { Separator } from "@/components/ui/separator"
+
 import { Toggle } from "@/components/ui/toggle"
 
 const QuickFilters = () => {
@@ -65,6 +67,7 @@ const QuickFilters = () => {
                     </div>
                 </CarouselItem>
                 ))}
+                <Separator orientation="vertical" />
             </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />

@@ -1,6 +1,7 @@
 'use client'
 
-import React, { useRef } from 'react';
+// import React, { useRef } from 'react';
+import React from 'react';
 import Navbar from "@/components/Navbar";
 import ResizableComponent from "@/components/Resizable/ResizableComponent";
 // import generatePdf from './pdfGenerator';
@@ -13,10 +14,10 @@ export default function Home() {
     page: { margin: Margin.MEDIUM }
   });
 
-  const handleGeneratePdf = () => {
-    // generatePdf(componentRef, 'output.pdf');
-    window.print()
-  };
+  // const handleGeneratePdf = () => {
+  //   // generatePdf(componentRef, 'output.pdf');
+  //   window.print()
+  // };
 
 
   return (
