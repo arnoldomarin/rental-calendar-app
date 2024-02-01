@@ -20,6 +20,18 @@ import { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import axios, { AxiosResponse } from 'axios';
 
+import { BellRing, Check } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
 const rentalGeneralLinks: { title: string; href: string; description: string }[] = [
   {
     title: "Rental Agreements",
@@ -88,21 +100,46 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ]
 
-interface WeatherData {
-  name: string;
-  main: {
-    temp: number;
-  };
-  weather: {
-    description: string;
-  }[];
-}
+const dfBusinessCategs: { title: string; href: string; description: string }[] = [
+  {
+    title: "Assets",
+    href: "/Assets",
+    description:
+      "In this category you can find all the dashboards related to Assets in the Driving Force Group.",
+  },
+  {
+    title: "Rentals",
+    href: "/Rentals",
+    description:
+    "In this category you can find all the dashboards related to Rentals in the Driving Force Group.",
+  },
+  {
+    title: "Sales & Leasing",
+    href: "/Sales&Leasing",
+    description: "In this category you can find all the dashboards related to Sales & Leasing in the Driving Force Group.",
+  },
+  {
+    title: "Management",
+    href: "/Management",
+    description: "In this category you can find all the dashboards related to Management in the Driving Force Group.",
+  },
+]
 
-interface ExchangeRate {
-  rates: Record<string, number>;
-  base: string;
-  date: string;
-}
+// interface WeatherData {
+//   name: string;
+//   main: {
+//     temp: number;
+//   };
+//   weather: {
+//     description: string;
+//   }[];
+// }
+
+// interface ExchangeRate {
+//   rates: Record<string, number>;
+//   base: string;
+//   date: string;
+// }
 
 const Navbar = () => {
 
@@ -152,6 +189,121 @@ const Navbar = () => {
         <NavigationMenu className="w-full main-navbar">
         <NavigationMenuList className="flex justify-between w-full">
           <div className="flex flex-row">
+          <NavigationMenuItem>
+              <NavigationMenuTrigger>Business Categories</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="p-4 flex justify-between gap-10 align-middle">
+                    <p className="text-sm leading-tight text-muted-foreground md:w-[500px]">
+                      These are all the business categories for Driving Force. Here you can access
+                      all the main pages for assets, rentals, Sales & leasing, and management.
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div>
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {dfBusinessCategs.map((component) => (
+                          // <ListItem
+                          //   key={component.title}
+                          //   title={component.title}
+                          //   href={component.href}
+                          // >
+                          //   {component.description}
+                          // </ListItem>
+                          <Link key={component.title} href={component.href} >
+                            <Card className={cn("w-[280px]")}>
+                              <CardHeader>
+                                <CardTitle>{component.title}</CardTitle>
+                                <CardDescription>{component.description}</CardDescription>
+                              </CardHeader>
+                            </Card>
+                          </Link>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Assets</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="p-4 flex justify-between gap-10 align-middle">
+                    <p className="text-sm leading-tight text-muted-foreground md:w-[500px]">
+                      This is a desciption of the rental group of dasboards. Here 
+                      we should include a nice general description of the types of
+                      dashboards that the user can find here
+                    </p>
+                    <Input type="Dashboard" placeholder="Search for a dashboard..." className="md:w-[300px]"/>
+                  </div>
+                  <div className="flex">
+                    <div>
+                      <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                        General
+                      </p>
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {rentalGeneralLinks.map((component) => (
+                          <ListItem
+                            key={component.title}
+                            title={component.title}
+                            href={component.href}
+                          >
+                            {component.description}
+                          </ListItem>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                        Rental Utilization
+                      </p>
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {components.map((component) => (
+                          <ListItem
+                            key={component.title}
+                            title={component.title}
+                            href={component.href}
+                          >
+                            {component.description}
+                          </ListItem>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="flex">
+                    <div>
+                      <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                        Rental Invoices
+                      </p>
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {components.map((component) => (
+                          <ListItem
+                            key={component.title}
+                            title={component.title}
+                            href={component.href}
+                          >
+                            {component.description}
+                          </ListItem>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                        Rental Revenue
+                      </p>
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {components.map((component) => (
+                          <ListItem
+                            key={component.title}
+                            title={component.title}
+                            href={component.href}
+                          >
+                            {component.description}
+                          </ListItem>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </NavigationMenuContent>
+            </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Rental</NavigationMenuTrigger>
               <NavigationMenuContent>
