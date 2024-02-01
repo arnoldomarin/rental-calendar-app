@@ -1,5 +1,11 @@
 import { ReactNode } from "react";
 
+export interface linkCardProps {
+    title: string;
+    href: string;
+    description: string;
+}
+
 export interface kpiProps {
     title: string;
     value: number;

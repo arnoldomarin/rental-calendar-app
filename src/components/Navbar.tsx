@@ -16,21 +16,22 @@ import {
 
 import { Input } from "@/components/ui/input"
 
-import { useState, useEffect } from 'react';
-import io from 'socket.io-client';
-import axios, { AxiosResponse } from 'axios';
+// import { useState, useEffect } from 'react';
+// import io from 'socket.io-client';
+// import axios, { AxiosResponse } from 'axios';
 
-import { BellRing, Check } from "lucide-react"
+// import { BellRing, Check } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
+// import { Button } from "@/components/ui/button"
 import {
   Card,
-  CardContent,
+  // CardContent,
   CardDescription,
-  CardFooter,
+  // CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import LinkCard from "./Cards/LinkCard"
 
 const rentalGeneralLinks: { title: string; href: string; description: string }[] = [
   {
@@ -201,7 +202,7 @@ const Navbar = () => {
                   <div className="flex">
                     <div>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                        {dfBusinessCategs.map((component) => (
+                        {dfBusinessCategs.map((linkCard) => (
                           // <ListItem
                           //   key={component.title}
                           //   title={component.title}
@@ -209,14 +210,7 @@ const Navbar = () => {
                           // >
                           //   {component.description}
                           // </ListItem>
-                          <Link key={component.title} href={component.href} >
-                            <Card className={cn("w-[280px]")}>
-                              <CardHeader>
-                                <CardTitle>{component.title}</CardTitle>
-                                <CardDescription>{component.description}</CardDescription>
-                              </CardHeader>
-                            </Card>
-                          </Link>
+                          <LinkCard linkCard={linkCard}/>
                         ))}
                       </ul>
                     </div>
