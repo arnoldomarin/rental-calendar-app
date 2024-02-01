@@ -82,3 +82,27 @@
 .main-navbar > div ~ div {
   width: 60%;
 }
+
+.gradient-background {
+  background: transparent;
+  padding: 20px; /* Adjust as per your design */
+  display: inline-block; /* Make sure it's an inline block so that the gradient covers the content */
+  transition: all 0.5s ease;
+}
+
+.gradient-background:hover {
+  background-color: #5665f0;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-out;
+  -moz-transition: background-color 0.3s ease-out;
+  -o-transition: background-color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
+  h3, p {
+    color: white;
+    cursor: pointer;
+    -webkit-transition: color 0.3s ease-out;
+    -moz-transition: color 0.3s ease-out;
+    -o-transition: color 0.3s ease-out;
+    transition: color 0.3s ease-out;
+  }
+}

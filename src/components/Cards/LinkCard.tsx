@@ -18,8 +18,8 @@ interface kpiCardProps {
   
 const LinkCard = ({ linkCard } :  kpiCardProps) => {
   return (
-    <Link key={linkCard.title} href={linkCard.href} >
-        <Card className={cn("w-[280px]")}>
+    <Link key={linkCard.title} href={linkCard.href}>
+        <Card className={cn("w-[280px] gradient-background")} >
         <CardHeader>
             <CardTitle>{linkCard.title}</CardTitle>
             <CardDescription>{linkCard.description}</CardDescription>
