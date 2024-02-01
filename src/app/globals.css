@@ -79,9 +79,9 @@
   width: 100%;
 }
 
-.main-navbar > div ~ div {
-  width: 60%;
-}
+/* .main-navbar > div ~ div {
+  width: 80%;
+} */
 
 .gradient-background {
   background: transparent;
@@ -91,7 +91,7 @@
 }
 
 .gradient-background:hover {
-  background-color: #5665f0;
+  background-color: #0A2B3A;
   cursor: pointer;
   -webkit-transition: background-color 0.3s ease-out;
   -moz-transition: background-color 0.3s ease-out;
