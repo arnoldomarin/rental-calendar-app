@@ -64,9 +64,9 @@ export default function Home() {
         <div className="w-full">
           <Navbar />
         </div>
-      {/* <div className="w-full mt-5">
+      <div className="w-full mt-5">
         <ResizableComponent />
-      </div> */}
+      </div>
       </div>
       {/* <button onClick={() => handleGeneratePdf()}>Generate PDF</button> */}
       {/* <button onClick={() => toPDF()}>Download PDF</button> */}

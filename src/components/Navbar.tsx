@@ -427,7 +427,53 @@ const Navbar = () => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Leasing</NavigationMenuTrigger>
+                <NavigationMenuTrigger>Sales & Leasing</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="p-4 md:w-[500px] lg:w-[600px]">
+                    <p className="text-sm leading-tight text-muted-foreground">
+                      This is a desciption of the rental group of dasboards. Here 
+                      we should include a nice general description of the types of
+                      dashboards that the user can find here
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div>
+                      <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                        General
+                      </p>
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {rentalGeneralLinks.map((component) => (
+                          <ListItem
+                            key={component.title}
+                            title={component.title}
+                            href={component.href}
+                          >
+                            {component.description}
+                          </ListItem>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                        Lease Contracts
+                      </p>
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {components.map((component) => (
+                          <ListItem
+                            key={component.title}
+                            title={component.title}
+                            href={component.href}
+                          >
+                            {component.description}
+                          </ListItem>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Management</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="p-4 md:w-[500px] lg:w-[600px]">
                     <p className="text-sm leading-tight text-muted-foreground">
