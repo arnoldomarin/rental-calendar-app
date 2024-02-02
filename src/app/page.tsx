@@ -61,12 +61,12 @@ export default function Home() {
       {/* <div ref={componentRef}> */}
       <div ref={targetRef} className="w-full">
         {/* Your Next.js component content goes here */}
-        <div className="w-full">
+        {/* <div className="w-[600px] md:w-full">
           <Navbar />
+        </div> */}
+        <div className="w-full mt-5">
+          <ResizableComponent />
         </div>
-      <div className="w-full mt-5">
-        <ResizableComponent />
-      </div>
       </div>
       {/* <button onClick={() => handleGeneratePdf()}>Generate PDF</button> */}
       {/* <button onClick={() => toPDF()}>Download PDF</button> */}

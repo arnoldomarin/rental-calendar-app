@@ -207,7 +207,7 @@ const Navbar = () => {
 
 
     return (
-        <NavigationMenu className="w-full main-navbar">
+        <NavigationMenu className="w-full main-navbar border rounded-tr-lg rounded-br-lg p-1">
           <NavigationMenuList className="flex justify-between w-full">
             <div className="flex flex-row">
             <NavigationMenuItem>
@@ -233,7 +233,7 @@ const Navbar = () => {
                             <LinkCard linkCard={linkCard}/>
                           ))}
                         </ul> */}
-                        <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
+                        <ul className="grid gap-3 p-6 md:w-[600px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
                           <li className="row-span-4">
                             <NavigationMenuLink asChild>
                               <a
