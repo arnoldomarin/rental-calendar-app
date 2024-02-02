@@ -9,7 +9,7 @@ import KPICards from '../KPIs/KPICards'
 import FiltersGroup from '../Filters/FiltersGroup'
 import QuickFilters from '../Filters/QuickFilters'
 import VerticalNavbar from '../Navs/VerticalNavbar'
-import { CarFront, Receipt, BadgeDollarSign, GanttChartSquare } from 'lucide-react';
+import { CarFront, Receipt, BadgeDollarSign, GanttChartSquare, MenuSquare } from 'lucide-react';
 import { Toggle } from "@/components/ui/toggle";
 
 const ResizableComponent = () => {
@@ -46,9 +46,12 @@ const ResizableComponent = () => {
       };
   return (
     <div>
-        <Toggle onPressedChange={(e) => handleChange(e)}>Toggle</Toggle>
-        <ResizablePanelGroup direction="horizontal" className='align-middle'>       
+
+        <ResizablePanelGroup direction="horizontal" className='flex flex-col align-middle'>     
             <ResizablePanel minSize={navbarCollapsed ? 3.5 : 12} maxSize={navbarCollapsed ? 3.5 : 15}>
+            <div className="py-2 border rounded-tl-lg">
+                <Toggle onPressedChange={(e) => handleChange(e)}><MenuSquare size={20} /></Toggle>
+            </div>  
                 <VerticalNavbar isCollapsed={navbarCollapsed} links={dfBusinessCategs} />
             </ResizablePanel>
         <ResizableHandle withHandle={!navbarCollapsed} className='bg-transparent'/>
