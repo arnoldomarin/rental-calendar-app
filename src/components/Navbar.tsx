@@ -212,15 +212,15 @@ const Navbar = () => {
             <div className="flex flex-row">
             <NavigationMenuItem>
                 <NavigationMenuTrigger>Business Categories</NavigationMenuTrigger>
-                  <NavigationMenuContent className="w-full">
+                  <NavigationMenuContent>
                     <div className="p-4 flex justify-between gap-10 align-middle">
                       <p className="text-sm leading-tight text-muted-foreground md:w-[500px]">
                         These are all the business categories for Driving Force. Here you can access
                         all the main pages for assets, rentals, Sales & leasing, and management.
                       </p>
                     </div>
-                    <div className="flex w-full">
-                      <div className="flex w-full">
+                    <div>
+                      <div>
                         {/* <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                           {dfBusinessCategs.map((linkCard) => (
                             // <ListItem
@@ -233,7 +233,7 @@ const Navbar = () => {
                             <LinkCard linkCard={linkCard}/>
                           ))}
                         </ul> */}
-                        <ul className="grid gap-3 p-6 w-full lg:grid-cols-[.75fr_1fr]">
+                        <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
                           <li className="row-span-4">
                             <NavigationMenuLink asChild>
                               <a
