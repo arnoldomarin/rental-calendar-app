@@ -14,7 +14,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
-import { Input } from "@/components/ui/input"
+import { Input } from "@/components/ui/input";
 
 // import { useState, useEffect } from 'react';
 // import io from 'socket.io-client';
@@ -219,9 +219,9 @@ const Navbar = () => {
                         all the main pages for assets, rentals, Sales & leasing, and management.
                       </p>
                     </div>
-                    <div className="flex">
-                      <div>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                    <div className="flex w-full">
+                      <div className="flex w-full">
+                        {/* <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                           {dfBusinessCategs.map((linkCard) => (
                             // <ListItem
                             //   key={component.title}
@@ -231,6 +231,33 @@ const Navbar = () => {
                             //   {component.description}
                             // </ListItem>
                             <LinkCard linkCard={linkCard}/>
+                          ))}
+                        </ul> */}
+                        <ul className="grid gap-3 p-6 w-full lg:grid-cols-[.75fr_1fr]">
+                          <li className="row-span-4">
+                            <NavigationMenuLink asChild>
+                              <a
+                                className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                                href="/"
+                              >
+                                {/* <Icons.logo className="h-6 w-6" /> */}
+                                <div className="mb-2 mt-4 text-lg font-medium">
+                                  Driving Force
+                                </div>
+                                <p className="text-sm leading-tight text-muted-foreground">
+                                  This is a description for all the different business categories in The Driving Force Group.
+                                </p>
+                              </a>
+                            </NavigationMenuLink>
+                          </li>
+                          {dfBusinessCategs.map((linkCard) => (
+                            <ListItem
+                              key={linkCard.title}
+                              title={linkCard.title}
+                              href={linkCard.href}
+                            >
+                              {linkCard.description}
+                            </ListItem>
                           ))}
                         </ul>
                       </div>
