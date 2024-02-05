@@ -44,7 +44,12 @@ import {
   salesLeasingGeneralLinks,
   leaseContractsLinks,
   salesCommissionsLinks,
-  salesRevenueLinks
+  salesRevenueLinks,
+  managementAccountingLinks,
+  managementRentalsLinks,
+  managementPayrollLinks,
+  managementGeneralLinks,
+  managementCulturePeopleLinks
 } from "@/types"
 
 
@@ -414,7 +419,7 @@ const Navbar = () => {
                         General
                       </p>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                        {rentalGeneralLinks.map((component) => (
+                        {managementGeneralLinks.map((component) => (
                           <ListItem
                             key={component.title}
                             title={component.title}
@@ -427,10 +432,62 @@ const Navbar = () => {
                     </div>
                     <div>
                       <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
-                        Lease Contracts
+                        Culture & People
                       </p>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                        {components.map((component) => (
+                        {managementCulturePeopleLinks.map((component) => (
+                          <ListItem
+                            key={component.title}
+                            title={component.title}
+                            href={component.href}
+                          >
+                            {component.description}
+                          </ListItem>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="flex">
+                    <div>
+                      <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                        Accounting
+                      </p>
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {managementAccountingLinks.map((component) => (
+                          <ListItem
+                            key={component.title}
+                            title={component.title}
+                            href={component.href}
+                          >
+                            {component.description}
+                          </ListItem>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                        Rentals
+                      </p>
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {managementRentalsLinks.map((component) => (
+                          <ListItem
+                            key={component.title}
+                            title={component.title}
+                            href={component.href}
+                          >
+                            {component.description}
+                          </ListItem>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="flex">
+                    <div>
+                      <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                        Payroll
+                      </p>
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {managementPayrollLinks.map((component) => (
                           <ListItem
                             key={component.title}
                             title={component.title}

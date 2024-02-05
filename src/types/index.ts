@@ -379,3 +379,113 @@ export  const salesRevenueLinks: { title: string; href: string; description: str
         "This is the description for the Sales F&I Performance in the Driving Force Group.",
     }
 ]
+
+// Management links
+export const managementGeneralLinks: { title: string; href: string; description: string }[] = [
+    {
+        title: "Executive Summary",
+        href: "/ExecutiveSummary",
+        description:
+          "This is the description for the Executive Summary in the Driving Force Group.",
+    },
+    {
+        title: "Vehicle Fleet 360 Detail",
+        href: "/VehicleFleet360Detail",
+        description:
+        "This is the description for Vehicle Fleet 360 Detail in the Driving Force Group.",
+    },
+    {
+        title: "Vehicle Aging",
+        href: "/VehicleAging",
+        description: "This is the description for Vehicle Aging in the Driving Force Group.",
+    },
+    {
+        title: "Health & Safety Incident Tracker",
+        href: "/HealthSafetyIncidentTracker",
+        description: "This is the description for Health & Safety Incident Tracker in the Driving Force Group.",
+    }
+]
+
+export const managementCulturePeopleLinks: { title: string; href: string; description: string }[] = [
+    {
+        title: "Driving Force Group Employees",
+        href: "/DrivingForceGroupEmployees",
+        description:
+          "This is the description for Driving Force Group Employees in the Driving Force Group.",
+    },
+    {
+        title: "TDF Group Organization",
+        href: "/TDFGroupOrganization",
+        description:
+        "This is the description for TDF Group Organization in the Driving Force Group.",
+    }
+]
+
+export const managementAccountingLinks: { title: string; href: string; description: string }[] = [
+    {
+        title: "AR Rental Customers Aging",
+        href: "/ARRentalCustomersAging",
+        description:
+          "This is the description for AR Rental Customers Aging in the Driving Force Group.",
+    },
+    {
+        title: "AR Vehicle Aging Sales",
+        href: "/ARVehicleAgingSales",
+        description:
+          "This is the description for AR Vehicle Aging Sales in the Driving Force Group.",
+    },
+    {
+        title: "Accounting Continuity",
+        href: "/AccountingContinuity",
+        description:
+        "This is the description for Accounting Continuity in the Driving Force Group.",
+    },
+    {
+        title: "SAP Concur Purchase Orders",
+        href: "/SAPConcurPurchaseOrders",
+        description:
+        "This is the description for SAP Concur Purchase Orders in the Driving Force Group.",
+    },
+    {
+        title: "SAP Concur Invoices",
+        href: "/SAPConcurInvoices",
+        description:
+        "This is the description for SAP Concur Invoices in the Driving Force Group.",
+    },
+    {
+        title: "SAP Concur Vendor Analysis",
+        href: "/SAPConcurVendorAnalysis",
+        description:
+        "This is the description for SAP Concur Vendor Analysis in the Driving Force Group.",
+    }
+]
+
+export const managementRentalsLinks: { title: string; href: string; description: string }[] = [
+    {
+        title: "Rental Fleet Equity",
+        href: "/RentalFleetEquity",
+        description:
+          "This is the description for Rental Fleet Equity in the Driving Force Group.",
+    },
+    {
+        title: "Rental Fleet Equity by VCAT",
+        href: "/RentalFleetEquityVCAT",
+        description:
+        "This is the description for Rental Fleet Equity by VCAT in the Driving Force Group.",
+    },
+    {
+        title: "Rental Fleet Equity Detail",
+        href: "/RentalFleetEquityDetail",
+        description:
+        "This is the description for Rental Fleet Equity Detail in the Driving Force Group.",
+    }
+]
+
+export const managementPayrollLinks: { title: string; href: string; description: string }[] = [
+    {
+        title: "Lease Commission Details",
+        href: "/LeaseCommissionDetails",
+        description:
+          "This is the description for Lease Commission Details in the Driving Force Group.",
+    }
+]
