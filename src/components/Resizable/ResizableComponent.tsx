@@ -78,9 +78,9 @@ const ResizableComponent = () => {
     return (
         <div>
 
-            <ResizablePanelGroup direction="horizontal" className='flex flex-col align-middle'>     
-                <ResizablePanel minSize={navbarCollapsed ? 3.5 : 12} maxSize={navbarCollapsed ? 3.5 : 15}>
-                <div className="p-1 border rounded-tl-lg">
+            <ResizablePanelGroup direction="horizontal" className='flex flex-col align-middle min-h-screen'>     
+                <ResizablePanel minSize={navbarCollapsed ? 3.5 : 12} maxSize={navbarCollapsed ? 3.5 : 15} className='border'>
+                <div className="p-1 border-b">
                     <Toggle onPressedChange={(e) => handleChange(e)}><MenuSquare size={20} /></Toggle>
                 </div>  
                     <VerticalNavbar isCollapsed={navbarCollapsed} links={dfBusinessCategs} supportLinks={SupportLinks}/>

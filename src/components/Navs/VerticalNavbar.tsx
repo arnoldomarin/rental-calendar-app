@@ -34,10 +34,10 @@ interface NavProps {
   
 const VerticalNavbar = ({ links, isCollapsed, supportLinks }: NavProps) => {
   return (
-    <div>
+    <div className='h-full flex flex-col justify-between'>
       <div
         data-collapsed={isCollapsed}
-        className="group flex flex-col gap-4 py-2 data-[collapsed=true]:py-2 border border-t-0"
+        className="group flex flex-col gap-4 py-2 data-[collapsed=true]:py-2 border-b border-t-0"
       >
         <nav className="grid gap-1 px-2 group-[[data-collapsed=true]]:justify-center group-[[data-collapsed=true]]:px-2">
           {links.map((link, index) =>
@@ -98,7 +98,7 @@ const VerticalNavbar = ({ links, isCollapsed, supportLinks }: NavProps) => {
       </div>
       <div
         data-collapsed={isCollapsed}
-        className="group flex flex-col gap-4 py-2 data-[collapsed=true]:py-2 border border-t-0 rounded-b-lg"
+        className="group flex flex-col gap-4 py-2 data-[collapsed=true]:py-2 border-b border-t h-custom-nav"
       >
         <nav className="grid gap-1 px-2 group-[[data-collapsed=true]]:justify-center group-[[data-collapsed=true]]:px-2">
           {supportLinks.map((link, index) =>
