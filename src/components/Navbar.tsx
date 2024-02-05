@@ -207,7 +207,7 @@ const Navbar = () => {
 
 
     return (
-        <NavigationMenu className="w-full main-navbar border rounded-tr-lg rounded-br-lg p-1">
+        <NavigationMenu className="w-full main-navbar border border-l-0 rounded-tr-lg rounded-br-lg p-1">
           <NavigationMenuList className="flex justify-between w-full">
             <div className="flex flex-row">
             <NavigationMenuItem>

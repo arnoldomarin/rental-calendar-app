@@ -56,7 +56,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-between p-24 w-full">
+    <main className="flex flex-col items-center justify-between w-full">
       <div className="w-full">
       {/* <div ref={componentRef}> */}
       <div ref={targetRef} className="w-full">
@@ -64,7 +64,7 @@ export default function Home() {
         {/* <div className="w-[600px] md:w-full">
           <Navbar />
         </div> */}
-        <div className="w-full mt-5">
+        <div className="w-full">
           <ResizableComponent />
         </div>
       </div>

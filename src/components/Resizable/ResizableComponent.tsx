@@ -85,7 +85,7 @@ const ResizableComponent = () => {
                 </div>  
                     <VerticalNavbar isCollapsed={navbarCollapsed} links={dfBusinessCategs} supportLinks={SupportLinks}/>
                 </ResizablePanel>
-            <ResizableHandle withHandle={!navbarCollapsed} className='bg-transparent'/>
+            <ResizableHandle withHandle={!navbarCollapsed} className='bg-transparent w-0'/>
                 <ResizablePanel>   
                         <Navbar />
                 </ResizablePanel>
