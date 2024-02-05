@@ -413,7 +413,7 @@ const Navbar = () => {
                       dashboards that the user can find here
                     </p>
                   </div>
-                  <div className="flex">
+                  <div className="flex menu-content">
                     <div>
                       <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
                         General
@@ -447,7 +447,7 @@ const Navbar = () => {
                       </ul>
                     </div>
                   </div>
-                  <div className="flex">
+                  <div className="flex menu-content">
                     <div>
                       <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
                         Accounting
@@ -481,7 +481,7 @@ const Navbar = () => {
                       </ul>
                     </div>
                   </div>
-                  <div className="flex">
+                  <div className="flex menu-content">
                     <div>
                       <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
                         Payroll
