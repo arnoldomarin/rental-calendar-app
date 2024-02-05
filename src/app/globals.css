@@ -83,10 +83,14 @@
   margin: 0.4rem 0.8rem;
 }
 
+.main-navbar  .menu-content {
+  margin: 0 !important;
+}
+
 /* .main-navbar > div ~ div {
   width: 80%;
 } */
 
 .h-custom-nav {
-  height: 13.8rem;
+  height: 14.3rem;
 }

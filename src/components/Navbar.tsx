@@ -31,6 +31,8 @@ import {
   AvatarImage,
 } from "@/components/ui/avatar";
 
+// Rental Links
+
 const rentalGeneralLinks: { title: string; href: string; description: string }[] = [
   {
     title: "Rental Agreements",
@@ -81,6 +83,66 @@ const rentalUtilizationLinks: { title: string; href: string; description: string
   }
 ]
 
+const rentalInvoicesLinks: { title: string; href: string; description: string }[] = [
+  {
+    title: "Rental Invoices",
+    href: "/Rentals/RentalInvoices",
+    description:
+      "This is the description for the Rental Invoices. Here we would describe what is in the dashboard.",
+  },
+  {
+    title: "Rental Invoices (Detail)",
+    href: "/Rentals/RentalInvoicesDetail",
+    description:
+      "This is the description for the Rental Invoices (Detail). Here we would describe what is in the dashboard.",
+  },
+  {
+    title: "Due Rental Invoices",
+    href: "/Rentals/DueRentalInvoices",
+    description: "This is the description for Due Rental Invoices. Here we would describe what is in the dashboard.",
+  },
+  {
+    title: "Unapplied Payments",
+    href: "/Rentals/UnappliedPayments",
+    description: "This is the description for Unapplied Payments. Here we would describe what is in the dashboard.",
+  },
+  {
+    title: "Rental Chargeback",
+    href: "/Rentals/RentalChargeback",
+    description: "This is the description for Rental Chargeback. Here we would describe what is in the dashboard.",
+  },
+  {
+    title: "Open Rentals Invoices Required",
+    href: "/Rentals/OpenRentalsInvoicesRequired",
+    description: "This is the description for Open Rentals Invoices Required. Here we would describe what is in the dashboard.",
+  },
+]
+
+const rentalRevenueLinks: { title: string; href: string; description: string }[] = [
+  {
+    title: "Rental Revenue",
+    href: "/Rentals/RentalRevenue",
+    description:
+      "This is the description for the Rental Revenue. Here we would describe what is in the dashboard.",
+  },
+  {
+    title: "Rental Item Revenue",
+    href: "/Rentals/RentalItemRevenue",
+    description:
+      "This is the description for Rental Item Revenue. Here we would describe what is in the dashboard.",
+  },
+  {
+    title: "Top Rental Accounts",
+    href: "/Rentals/TopRentalAccounts",
+    description: "This is the description for Top Rental Accounts. Here we would describe what is in the dashboard.",
+  },
+  {
+    title: "Top Rental National Accounts",
+    href: "/Rentals/TopRentalNationalAccounts",
+    description: "This is the description for Top Rental National Accounts. Here we would describe what is in the dashboard.",
+  }
+]
+
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Alert Dialog",
@@ -119,6 +181,8 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ]
 
+// Business Categories
+
 const dfBusinessCategs: { title: string; href: string; description: string }[] = [
   {
     title: "Assets",
@@ -143,6 +207,62 @@ const dfBusinessCategs: { title: string; href: string; description: string }[] =
     description: "In this category you can find all the dashboards related to Management in the Driving Force Group.",
   },
 ]
+
+// Business Categories
+
+const assetsGeneralLinks: { title: string; href: string; description: string }[] = [
+  {
+    title: "Dashboard",
+    href: "/AssetsDashboard",
+    description:
+      "This is the description for the Assets Dashboard in the Driving Force Group.",
+  }
+]
+
+const assetsInventoryLinks: { title: string; href: string; description: string }[] = [
+  {
+    title: "Inventory",
+    href: "/AssetsInventory",
+    description:
+      "This is the description for the Assets Inventory in the Driving Force Group.",
+  },
+  {
+    title: "Inventory History",
+    href: "/AssetsInventoryHistory",
+    description:
+    "This is the description for the Assets Inventory History in the Driving Force Group.",
+  },
+  {
+    title: "Inventory Fleet Flow",
+    href: "/AssetsInventoryFleetFlow",
+    description: "This is the description for the Assets Inventory Fleet Flow in the Driving Force Group.",
+  },
+  {
+    title: "Purchased Vehicles",
+    href: "/PurchasedVehicles",
+    description: "This is the description for the Purchased Vehicles in the Driving Force Group.",
+  },
+  {
+    title: "Vehicle Sales",
+    href: "/Vehicle Sales",
+    description: "This is the description for the Vehicle Sales in the Driving Force Group.",
+  },
+  {
+    title: "Vehicle Recalls",
+    href: "/Vehicle Recalls",
+    description: "This is the description for the Vehicle Recalls in the Driving Force Group.",
+  },
+]
+
+const assetsTransferLinks: { title: string; href: string; description: string }[] = [
+  {
+    title: "Transfer History",
+    href: "/AssetsTransferHistory",
+    description:
+      "This is the description for the Assets Transfer History in the Driving Force Group.",
+  }
+]
+
 
 // interface WeatherData {
 //   name: string;
@@ -223,7 +343,7 @@ const Navbar = () => {
                         all the main pages for assets, rentals, Sales & leasing, and management.
                       </p>
                     </div>
-                    <div>
+                    <div className="menu-content">
                       <div>
                         {/* <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                           {dfBusinessCategs.map((linkCard) => (
@@ -270,84 +390,68 @@ const Navbar = () => {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Assets</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="p-4 flex justify-between gap-10 align-middle">
-                      <p className="text-sm leading-tight text-muted-foreground md:w-[500px]">
-                        This is a desciption of the rental group of dasboards. Here 
-                        we should include a nice general description of the types of
-                        dashboards that the user can find here
+                <NavigationMenuContent>
+                  <div className="p-4 flex justify-between gap-10 align-middle">
+                    <p className="text-sm leading-tight text-muted-foreground md:w-[500px]">
+                      This is a desciption of the rental group of dasboards. Here 
+                      we should include a nice general description of the types of
+                      dashboards that the user can find here
+                    </p>
+                    <Input type="Dashboard" placeholder="Search for a dashboard..." className="md:w-[300px]"/>
+                  </div>
+                  <div className="flex w-100 menu-content">
+                    <div>
+                      <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                        General
                       </p>
-                      <Input type="Dashboard" placeholder="Search for a dashboard..." className="md:w-[300px]"/>
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {assetsGeneralLinks.map((component) => (
+                          <ListItem
+                            key={component.title}
+                            title={component.title}
+                            href={component.href}
+                          >
+                            {component.description}
+                          </ListItem>
+                        ))}
+                      </ul>
                     </div>
-                    <div className="flex">
-                      <div>
-                        <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
-                          General
-                        </p>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                          {rentalGeneralLinks.map((component) => (
-                            <ListItem
-                              key={component.title}
-                              title={component.title}
-                              href={component.href}
-                            >
-                              {component.description}
-                            </ListItem>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
-                          Rental Utilization
-                        </p>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                          {components.map((component) => (
-                            <ListItem
-                              key={component.title}
-                              title={component.title}
-                              href={component.href}
-                            >
-                              {component.description}
-                            </ListItem>
-                          ))}
-                        </ul>
-                      </div>
+                    <div>
+                      <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                        Assets Transfers
+                      </p>
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {assetsTransferLinks.map((component) => (
+                          <ListItem
+                            key={component.title}
+                            title={component.title}
+                            href={component.href}
+                          >
+                            {component.description}
+                          </ListItem>
+                        ))}
+                      </ul>
                     </div>
-                    <div className="flex">
-                      <div>
-                        <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
-                          Rental Invoices
-                        </p>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                          {components.map((component) => (
-                            <ListItem
-                              key={component.title}
-                              title={component.title}
-                              href={component.href}
-                            >
-                              {component.description}
-                            </ListItem>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
-                          Rental Revenue
-                        </p>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                          {components.map((component) => (
-                            <ListItem
-                              key={component.title}
-                              title={component.title}
-                              href={component.href}
-                            >
-                              {component.description}
-                            </ListItem>
-                          ))}
-                        </ul>
-                      </div>
+                  </div>
+                  <div className="flex w-100 menu-content">
+                    <div>
+                      <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
+                        Assets Inventory
+                      </p>
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {assetsInventoryLinks.map((component) => (
+                          <ListItem
+                            key={component.title}
+                            title={component.title}
+                            href={component.href}
+                          >
+                            {component.description}
+                          </ListItem>
+                        ))}
+                      </ul>
                     </div>
-                  </NavigationMenuContent>
+                  </div>
+                </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Rental</NavigationMenuTrigger>
@@ -360,7 +464,7 @@ const Navbar = () => {
                     </p>
                     <Input type="Dashboard" placeholder="Search for a dashboard..." className="md:w-[300px]"/>
                   </div>
-                  <div className="flex w-100">
+                  <div className="flex w-100 menu-content">
                     <div>
                       <p className="px-4 pt-4 pb-0 text-sm leading-tight text-muted-foreground">
                         General
@@ -400,7 +504,7 @@ const Navbar = () => {
                         Rental Invoices
                       </p>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                        {components.map((component) => (
+                        {rentalInvoicesLinks.map((component) => (
                           <ListItem
                             key={component.title}
                             title={component.title}
@@ -416,7 +520,7 @@ const Navbar = () => {
                         Rental Revenue
                       </p>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                        {components.map((component) => (
+                        {rentalRevenueLinks.map((component) => (
                           <ListItem
                             key={component.title}
                             title={component.title}
