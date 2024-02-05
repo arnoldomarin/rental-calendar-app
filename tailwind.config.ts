@@ -19,6 +19,7 @@ const config = {
     },
     extend: {
       colors: {
+        'df-blue': '#00293a',
         'df-purple': '#5665f0',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

@@ -26,16 +26,10 @@ import dfLogo from "../assets/DrivingForceFleetSolutionsLogo.svg";
 
 // import { Button } from "@/components/ui/button"
 import {
-  Card,
-  // CardContent,
-  CardDescription,
-  // CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import LinkCard from "./Cards/LinkCard"
-
-import MySvg from 'src/assets/DrivingForceFleetSolutionsLogo.svg';
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar";
 
 const rentalGeneralLinks: { title: string; href: string; description: string }[] = [
   {
@@ -532,7 +526,10 @@ const Navbar = () => {
             <NavigationMenuItem>
               <Link href="/UserProfile" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  User Profile
+                  <Avatar className="user-avatar border-2 transition-colors hover:border-df-blue hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none">
+                    <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                    <AvatarFallback>User Profile</AvatarFallback>
+                  </Avatar>
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
