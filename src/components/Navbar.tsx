@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/navigation-menu"
 
 import { Input } from "@/components/ui/input";
+import Image from 'next/image';
+import dfLogo from "../assets/DrivingForceFleetSolutionsLogo.svg";
 
 // import { useState, useEffect } from 'react';
 // import io from 'socket.io-client';
@@ -32,6 +34,8 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import LinkCard from "./Cards/LinkCard"
+
+import MySvg from 'src/assets/DrivingForceFleetSolutionsLogo.svg';
 
 const rentalGeneralLinks: { title: string; href: string; description: string }[] = [
   {
@@ -208,6 +212,12 @@ const Navbar = () => {
 
     return (
         <NavigationMenu className="w-full main-navbar border border-l-0 rounded-tr-lg rounded-br-lg p-1">
+          <Image
+            src={dfLogo} 
+            alt="My SVG"
+            width={95}
+            height={95}
+          />
           <NavigationMenuList className="flex justify-between w-full">
             <div className="flex flex-row">
             <NavigationMenuItem>

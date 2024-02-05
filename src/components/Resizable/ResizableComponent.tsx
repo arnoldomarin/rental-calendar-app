@@ -80,7 +80,7 @@ const ResizableComponent = () => {
 
             <ResizablePanelGroup direction="horizontal" className='flex flex-col align-middle min-h-screen'>     
                 <ResizablePanel minSize={navbarCollapsed ? 3.5 : 12} maxSize={navbarCollapsed ? 3.5 : 15} className='border'>
-                <div className="p-1 border-b">
+                <div className="p-2 border-b">
                     <Toggle onPressedChange={(e) => handleChange(e)}><MenuSquare size={20} /></Toggle>
                 </div>  
                     <VerticalNavbar isCollapsed={navbarCollapsed} links={dfBusinessCategs} supportLinks={SupportLinks}/>
