@@ -211,14 +211,14 @@ const Navbar = () => {
 
 
     return (
-        <NavigationMenu className="w-full main-navbar border border-l-0 rounded-tr-lg rounded-br-lg p-1">
+        <NavigationMenu className="w-full main-navbar border border-l-0 rounded-tr-lg rounded-br-lg p-1 flex items-center">
           <Image
             src={dfLogo} 
             alt="My SVG"
             width={95}
             height={95}
           />
-          <NavigationMenuList className="flex justify-between w-full">
+          <NavigationMenuList className="flex justify-between w-full align-middle ms-2">
             <div className="flex flex-row">
             <NavigationMenuItem>
                 <NavigationMenuTrigger>Business Categories</NavigationMenuTrigger>
