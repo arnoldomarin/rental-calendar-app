@@ -29,10 +29,9 @@ const MobileNav = () => {
         <SheetTrigger className='me-5'><Menu size={18}/></SheetTrigger>
         <SheetContent>
             <SheetHeader>
-            <SheetTitle>Are you absolutely sure?</SheetTitle>
+            <SheetTitle>This is the mobile menu</SheetTitle>
             <SheetDescription>
-                This action cannot be undone. This will permanently delete your account
-                and remove your data from our servers.
+                Should add accordions with all the options
             </SheetDescription>
             </SheetHeader>
         </SheetContent>
