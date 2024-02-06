@@ -12,15 +12,7 @@ import VerticalNavbar from '../Navs/VerticalNavbar'
 import { CarFront, Receipt, BadgeDollarSign, GanttChartSquare, MenuSquare, HelpCircle, UserPlus, BookText, ShieldEllipsis } from 'lucide-react';
 import { Toggle } from "@/components/ui/toggle";
 import Navbar from '../Navbar';
-
-import {
-    Sheet,
-    SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
-  } from "@/components/ui/sheet"
+import MobileNav from '../Navs/MobileNav';
   
 
 const ResizableComponent = () => {
@@ -108,18 +100,7 @@ const ResizableComponent = () => {
         <div>
             {isMobile ? (
                 // Mobile view component
-                <Sheet>
-                <SheetTrigger>Open</SheetTrigger>
-                <SheetContent>
-                    <SheetHeader>
-                    <SheetTitle>Are you absolutely sure?</SheetTitle>
-                    <SheetDescription>
-                        This action cannot be undone. This will permanently delete your account
-                        and remove your data from our servers.
-                    </SheetDescription>
-                    </SheetHeader>
-                </SheetContent>
-                </Sheet>
+                <MobileNav />
             ) : (
                 <ResizablePanelGroup direction="horizontal" className='flex flex-col align-middle min-h-screen'>     
                     <ResizablePanel minSize={navbarCollapsed ? 3.5 : 12} maxSize={navbarCollapsed ? 3.5 : 15} className='border smooth-transition'>
