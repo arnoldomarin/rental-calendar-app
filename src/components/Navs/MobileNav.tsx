@@ -93,7 +93,7 @@ const MobileNav = () => {
                       </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="nested-item-2">
-                      <AccordionTrigger>Vehicle Transfer</AccordionTrigger>
+                      <AccordionTrigger>Assets Transfer</AccordionTrigger>
                       <AccordionContent>
                         {assetsTransferLinks.map((component) => (
                           <Link
