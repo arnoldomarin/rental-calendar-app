@@ -50,7 +50,7 @@ import {
   managementPayrollLinks,
   managementGeneralLinks,
   managementCulturePeopleLinks
-} from "@/types"
+} from "@/types";
 
 
 // interface WeatherData {
