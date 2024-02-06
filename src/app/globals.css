@@ -94,3 +94,7 @@
 .h-custom-nav {
   height: 14.3rem;
 }
+
+.smooth-transition {
+  transition: ease-in-out .2s linear;
+}
