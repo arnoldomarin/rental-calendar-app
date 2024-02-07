@@ -60,8 +60,7 @@ const MobileNav = () => {
         <SheetTrigger className='me-5'><Menu size={18}/></SheetTrigger>
         <SheetContent className='overflow-scroll'>
           <SheetHeader>
-          <SheetTitle>This is the mobile menu</SheetTitle>
-          <SheetDescription className='flex flex-wrap justify-between w-full min-h-full'>
+          <SheetDescription className='mobile-nav-components flex flex-wrap justify-between w-full'>
             <Accordion type="multiple" className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-black">Assets</AccordionTrigger>
@@ -300,7 +299,8 @@ const MobileNav = () => {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <div className='w-full'>
+            <div className='w-full py-5'>
+              <h3 className="text-black text-start font-medium">Admin & Support</h3>
               {adminSupportLinks.map((component) => (
                 <Link
                   key={component.title}
@@ -312,7 +312,7 @@ const MobileNav = () => {
               ))}
               <Accordion type="multiple" className='sub-accordions'>
                 <AccordionItem value="item-1">
-                  <AccordionTrigger className="text-black text-xs">Admin</AccordionTrigger>
+                  <AccordionTrigger className="text-black text-xs py-1">Admin</AccordionTrigger>
                   <AccordionContent>
                     {adminLinks.map((component) => (
                       <Link
