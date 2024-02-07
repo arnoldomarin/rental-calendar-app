@@ -98,3 +98,7 @@
 .smooth-transition {
   transition: ease-in-out .2s linear;
 }
+
+.sub-accordions .border-b {
+  border: none;
+}
