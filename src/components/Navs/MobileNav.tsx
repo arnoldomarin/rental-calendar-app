@@ -56,7 +56,7 @@ const MobileNav = () => {
       />
       <Sheet>
         <SheetTrigger className='me-5'><Menu size={18}/></SheetTrigger>
-        <SheetContent>
+        <SheetContent className='overflow-scroll'>
             <SheetHeader>
             <SheetTitle>This is the mobile menu</SheetTitle>
             <SheetDescription>
@@ -152,6 +152,65 @@ const MobileNav = () => {
                       <AccordionTrigger className="text-black text-xs">Rental Revenue</AccordionTrigger>
                       <AccordionContent>
                         {rentalRevenueLinks.map((component) => (
+                          <Link
+                            key={component.title}
+                            href={component.href}
+                            className="flex flex-wrap justify-startdark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white text-xs my-2"
+                          >
+                            <span>{component.title}</span>
+                          </Link>
+                        ))}
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger className="text-black">Sales & Leasing</AccordionTrigger>
+                <AccordionContent>
+                  {salesLeasingGeneralLinks.map((component) => (
+                    <Link
+                      key={component.title}
+                      href={component.href}
+                      className="flex flex-wrap justify-startdark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white text-xs my-2"
+                    >
+                      <span>{component.title}</span>
+                    </Link>
+                  ))}
+                  {/* Nested Accordion */}
+                  <Accordion type="multiple" className='sub-accordions'>
+                    <AccordionItem value="nested-item-1">
+                      <AccordionTrigger className="text-black text-xs">Lease Contracts</AccordionTrigger>
+                      <AccordionContent>
+                        {leaseContractsLinks.map((component) => (
+                          <Link
+                            key={component.title}
+                            href={component.href}
+                            className="flex flex-wrap justify-startdark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white text-xs my-2"
+                          >
+                            <span>{component.title}</span>
+                          </Link>
+                        ))}
+                      </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="nested-item-2">
+                      <AccordionTrigger className="text-black text-xs">Commissions</AccordionTrigger>
+                      <AccordionContent>
+                        {salesCommissionsLinks.map((component) => (
+                          <Link
+                            key={component.title}
+                            href={component.href}
+                            className="flex flex-wrap justify-startdark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white text-xs my-2"
+                          >
+                            <span>{component.title}</span>
+                          </Link>
+                        ))}
+                      </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="nested-item-3">
+                      <AccordionTrigger className="text-black text-xs">Sales Revenue</AccordionTrigger>
+                      <AccordionContent>
+                        {salesRevenueLinks.map((component) => (
                           <Link
                             key={component.title}
                             href={component.href}
