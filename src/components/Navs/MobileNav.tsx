@@ -40,7 +40,9 @@ import {
   managementRentalsLinks,
   managementPayrollLinks,
   managementGeneralLinks,
-  managementCulturePeopleLinks
+  managementCulturePeopleLinks,
+  adminLinks,
+  adminSupportLinks
 } from "@/types";
 import Link from 'next/link';
 
@@ -57,9 +59,9 @@ const MobileNav = () => {
       <Sheet>
         <SheetTrigger className='me-5'><Menu size={18}/></SheetTrigger>
         <SheetContent className='overflow-scroll'>
-            <SheetHeader>
-            <SheetTitle>This is the mobile menu</SheetTitle>
-            <SheetDescription>
+          <SheetHeader>
+          <SheetTitle>This is the mobile menu</SheetTitle>
+          <SheetDescription className='flex flex-wrap justify-between w-full min-h-full'>
             <Accordion type="multiple" className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-black">Assets</AccordionTrigger>
@@ -298,8 +300,35 @@ const MobileNav = () => {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            </SheetDescription>
-            </SheetHeader>
+            <div className='w-full'>
+              {adminSupportLinks.map((component) => (
+                <Link
+                  key={component.title}
+                  href={component.href}
+                  className="flex flex-wrap justify-startdark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white text-xs my-2"
+                >
+                  <span>{component.title}</span>
+                </Link>
+              ))}
+              <Accordion type="multiple" className='sub-accordions'>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="text-black text-xs">Admin</AccordionTrigger>
+                  <AccordionContent>
+                    {adminLinks.map((component) => (
+                      <Link
+                        key={component.title}
+                        href={component.href}
+                        className="flex flex-wrap justify-startdark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white text-xs my-2"
+                      >
+                        <span>{component.title}</span>
+                      </Link>
+                    ))}
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+          </SheetDescription>
+          </SheetHeader>
         </SheetContent>
       </Sheet>
     </div>

@@ -489,3 +489,45 @@ export const managementPayrollLinks: { title: string; href: string; description:
           "This is the description for Lease Commission Details in the Driving Force Group.",
     }
 ]
+
+export const adminSupportLinks: { title: string; href: string; description: string }[] = [
+  {
+    title: "Support",
+    href: "/Support",
+    description:
+      "This is the description for Support page in the Driving Force Group.",
+  },
+  {
+      title: "Request Access",
+      href: "/RequestAccess",
+      description:
+      "This is the description for Request Access page in the Driving Force Group.",
+  },
+  {
+      title: "Knowledge Base",
+      href: "/KnowledgeBase",
+      description:
+      "This is the description for Knowledge Base page in the Driving Force Group.",
+  }
+]
+
+export const adminLinks: { title: string; href: string; description: string }[] = [
+  {
+    title: "Report Permissions",
+    href: "/ReportPermissions",
+    description:
+      "This is the description for Support page in the Driving Force Group.",
+  },
+  {
+      title: "Dashboards",
+      href: "/Dashboards",
+      description:
+      "This is the description for Dashboards creation page in the Driving Force Group.",
+  },
+  {
+      title: "Data Dictionary",
+      href: "/DataDictionary",
+      description:
+      "This is the description for Data Dictionary page in the Driving Force Group.",
+  }
+]
