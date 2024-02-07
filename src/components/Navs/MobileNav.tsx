@@ -51,7 +51,7 @@ const MobileNav = () => {
     <div className='flex flex-wrap justify-between mt-1 align-middle'>
       <Image
         src={dfLogo} 
-        alt="My SVG"
+        alt="Driving Force Logo"
         width={95}
         height={95}
         className='ms-1'
@@ -61,7 +61,7 @@ const MobileNav = () => {
         <SheetContent className='overflow-scroll'>
           <SheetHeader>
           <SheetDescription className='mobile-nav-components flex flex-wrap justify-between w-full'>
-            <Accordion type="multiple" className="w-full">
+            <Accordion type="multiple" className="w-full mt-3">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-black">Assets</AccordionTrigger>
                 <AccordionContent>
