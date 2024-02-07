@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useState } from 'react'
 
 import {
@@ -13,6 +14,7 @@ import { CarFront, Receipt, BadgeDollarSign, GanttChartSquare, MenuSquare, HelpC
 import { Toggle } from "@/components/ui/toggle";
 import Navbar from '../Navbar';
 import MobileNav from '../Navs/MobileNav';
+import KPICards from '../KPIs/KPICards';
   
 
 const ResizableComponent = () => {

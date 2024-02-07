@@ -59,15 +59,11 @@ export default function Home() {
     <main className="flex flex-col items-center justify-between w-full">
       <div className="w-full">
       {/* <div ref={componentRef}> */}
-      <div ref={targetRef} className="w-full">
-        {/* Your Next.js component content goes here */}
-        {/* <div className="w-[600px] md:w-full">
-          <Navbar />
-        </div> */}
+      {/* <div ref={targetRef} className="w-full">
         <div className="w-full">
           <ResizableComponent />
         </div>
-      </div>
+      </div> */}
       {/* <button onClick={() => handleGeneratePdf()}>Generate PDF</button> */}
       {/* <button onClick={() => toPDF()}>Download PDF</button> */}
       {/* <button onClick={handleGeneratePdf}>PDF Lib</button> */}

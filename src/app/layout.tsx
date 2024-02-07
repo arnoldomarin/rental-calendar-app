@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ResizableComponent from "@/components/Resizable/ResizableComponent";
 
 const inter = Inter({ subsets: ["latin"]});
 
@@ -16,7 +17,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className + ' min-h-screen'}>{children}</body>
+      <body className={inter.className + ' min-h-screen'}>
+      <div className="w-full">
+        {/* Your Next.js component content goes here */}
+        {/* <div className="w-[600px] md:w-full">
+          <Navbar />
+        </div> */}
+        <div className="w-full">
+          <ResizableComponent />
+        </div>
+      </div>
+        {children}
+      </body>
     </html>
   );
 }
