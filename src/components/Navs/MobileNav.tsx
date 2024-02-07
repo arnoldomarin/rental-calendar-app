@@ -224,6 +224,79 @@ const MobileNav = () => {
                   </Accordion>
                 </AccordionContent>
               </AccordionItem>
+              <AccordionItem value="item-4">
+                <AccordionTrigger className="text-black">Management</AccordionTrigger>
+                <AccordionContent>
+                  {managementGeneralLinks.map((component) => (
+                    <Link
+                      key={component.title}
+                      href={component.href}
+                      className="flex flex-wrap justify-startdark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white text-xs my-2"
+                    >
+                      <span>{component.title}</span>
+                    </Link>
+                  ))}
+                  {/* Nested Accordion */}
+                  <Accordion type="multiple" className='sub-accordions'>
+                    <AccordionItem value="nested-item-1">
+                      <AccordionTrigger className="text-black text-xs">Culture & People</AccordionTrigger>
+                      <AccordionContent>
+                        {managementCulturePeopleLinks.map((component) => (
+                          <Link
+                            key={component.title}
+                            href={component.href}
+                            className="flex flex-wrap justify-startdark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white text-xs my-2"
+                          >
+                            <span>{component.title}</span>
+                          </Link>
+                        ))}
+                      </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="nested-item-2">
+                      <AccordionTrigger className="text-black text-xs">Accounting</AccordionTrigger>
+                      <AccordionContent>
+                        {managementAccountingLinks.map((component) => (
+                          <Link
+                            key={component.title}
+                            href={component.href}
+                            className="flex flex-wrap justify-startdark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white text-xs my-2"
+                          >
+                            <span>{component.title}</span>
+                          </Link>
+                        ))}
+                      </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="nested-item-3">
+                      <AccordionTrigger className="text-black text-xs">Rentals</AccordionTrigger>
+                      <AccordionContent>
+                        {managementRentalsLinks.map((component) => (
+                          <Link
+                            key={component.title}
+                            href={component.href}
+                            className="flex flex-wrap justify-startdark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white text-xs my-2"
+                          >
+                            <span>{component.title}</span>
+                          </Link>
+                        ))}
+                      </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="nested-item-4">
+                      <AccordionTrigger className="text-black text-xs">Payroll</AccordionTrigger>
+                      <AccordionContent>
+                        {managementPayrollLinks.map((component) => (
+                          <Link
+                            key={component.title}
+                            href={component.href}
+                            className="flex flex-wrap justify-startdark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white text-xs my-2"
+                          >
+                            <span>{component.title}</span>
+                          </Link>
+                        ))}
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </AccordionContent>
+              </AccordionItem>
             </Accordion>
             </SheetDescription>
             </SheetHeader>
