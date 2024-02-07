@@ -1,8 +1,12 @@
+import KPICards from '@/components/KPIs/KPICards'
 import React from 'react'
 
 const RentalCalendar = () => {
   return (
-    <h1>RentalCalendar Page</h1>
+    <div>
+      <h1 className='m-5'>RentalCalendar Page</h1>
+      <KPICards />
+    </div>
   )
 }
 

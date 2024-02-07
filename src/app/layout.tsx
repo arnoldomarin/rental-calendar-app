@@ -25,7 +25,7 @@ export default function RootLayout({
         <Navbar />
       </div> */}
       <div className="w-full">
-        <ResizableComponent />
+        <ResizableComponent>{children}</ResizableComponent>
       </div>
     </div>
     <main className='p-5'>

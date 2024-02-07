@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 
 import {
     ResizableHandle,
@@ -15,9 +15,13 @@ import { Toggle } from "@/components/ui/toggle";
 import Navbar from '../Navbar';
 import MobileNav from '../Navs/MobileNav';
 import KPICards from '../KPIs/KPICards';
+
+interface ResizableComponentProps {
+    children: React.ReactNode;
+  }
   
 
-const ResizableComponent = () => {
+  const ResizableComponent: React.FC<ResizableComponentProps> = ({ children }) => {
 
     const [navbarCollapsed, setNavbarCollapsed] = useState(false);
 
@@ -102,7 +106,10 @@ const ResizableComponent = () => {
         <div>
             {isMobile ? (
                 // Mobile view component
-                <MobileNav />
+                <div>
+                    <MobileNav />
+                    {children}
+                </div>
             ) : (
                 <ResizablePanelGroup direction="horizontal" className='flex flex-col align-middle min-h-screen'>     
                     <ResizablePanel minSize={navbarCollapsed ? 3.5 : 12} maxSize={navbarCollapsed ? 3.5 : 15} className='border smooth-transition'>
@@ -114,6 +121,7 @@ const ResizableComponent = () => {
                 <ResizableHandle withHandle={!navbarCollapsed} className='bg-transparent w-0'/>
                     <ResizablePanel>   
                         <Navbar />
+                        {children}
                     </ResizablePanel>
                 </ResizablePanelGroup>
             )}
