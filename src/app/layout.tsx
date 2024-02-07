@@ -16,19 +16,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className + ' min-h-screen'}>
+
+<html lang="en">
+<body className={inter.className + ' min-h-screen'}>
+    <div className="w-full">
+      {/* Your Next.js component content goes here */}
+      {/* <div className="w-[600px] md:w-full">
+        <Navbar />
+      </div> */}
       <div className="w-full">
-        {/* Your Next.js component content goes here */}
-        {/* <div className="w-[600px] md:w-full">
-          <Navbar />
-        </div> */}
-        <div className="w-full">
-          <ResizableComponent />
-        </div>
+        <ResizableComponent />
       </div>
+    </div>
+    <main className='p-5'>
         {children}
-      </body>
-    </html>
+    </main>
+</body>
+</html>
   );
 }
