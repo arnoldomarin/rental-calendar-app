@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Check, ChevronDown, ChevronUp, Edit2, Plane, Trash, Warehouse } from "lucide-react";
+import { Check, ChevronDown, ChevronUp, Plane, Trash, Warehouse } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import {
@@ -46,9 +46,6 @@ import {
 import { DialogClose } from "@radix-ui/react-dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-
-// FIXME: https://twitter.com/lemcii/status/1659649371162419202?s=46&t=gqNnMIjMWXiG2Rbrr5gT6g
-// Removing states would help maybe?
 
 type Options = Record<"value" | "label" | "color" | "type", string>;
 
@@ -210,10 +207,6 @@ export function ShadMultiselect() {
                       />
                     </div>
                     <div className="flex-1">{framework.label}</div>
-                    {/* <div
-                      className="h-4 w-4 rounded-full"
-                      style={{ backgroundColor: framework.color }}
-                    /> */}
                     {
                       framework.type === "airport" &&
                       <Plane className={"ms-1 h-5 w-5"}/>
@@ -339,7 +332,6 @@ const CommandItemCreate = ({
 
   if (!render) return null;
 
-  // BUG: whenever a space is appended, the Create-Button will not be shown.
   return (
     <CommandItem
       key={`${inputValue}`}
@@ -394,7 +386,6 @@ const DialogListItem = ({
             <AccordionTrigger>Edit</AccordionTrigger>
             <AlertDialog>
               <AlertDialogTrigger asChild>
-                {/* REMINDER: size="xs" */}
                 <Button variant="destructive" size="sm">
                   Delete
                 </Button>
@@ -448,7 +439,6 @@ const DialogListItem = ({
                 className="h-8 px-2 py-1"
               />
             </div>
-            {/* REMINDER: size="xs" */}
             <Button type="submit" disabled={disabled} size="sm">
               Save
             </Button>
