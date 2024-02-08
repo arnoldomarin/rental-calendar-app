@@ -159,12 +159,14 @@ export function ShadMultiselect() {
           >
             <span className="truncate">
               {selectedValues.length === 0 && "Select a branch"}
-              {selectedValues.length === 1 && selectedValues[0].label}
-              {selectedValues.length === 2 &&
-                selectedValues.map(({ label }) => label).join(", ")}
-              {selectedValues.length > 2 &&
-                `${selectedValues[0].label} +${selectedValues.length}`}
-                {/* `${selectedValues[0].label} ${selectedValues.length} Branches selected`} */}
+              {selectedValues.length === 1 && 
+                <Badge className="me-1">{selectedValues[0].label}</Badge>
+              }
+              {selectedValues.length >= 2 &&
+              <span>
+                <Badge className="me-1">{selectedValues[0].label}</Badge>
+                +{selectedValues.length-1}</span>
+              }
             </span>
             {!openCombobox && 
               <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" /> 
