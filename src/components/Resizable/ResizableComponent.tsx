@@ -107,8 +107,8 @@ interface ResizableComponentProps {
             {isMobile ? (
                 // Mobile view component
                 <div>
-                    <MobileNav />
-                    {children}
+                <MobileNav />
+                {children}
                 </div>
             ) : (
                 <ResizablePanelGroup direction="horizontal" className='flex flex-col align-middle min-h-screen'>     

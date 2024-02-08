@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ResizableComponent from "@/components/Resizable/ResizableComponent";
 
+import { cookies } from "next/headers";
+
 const inter = Inter({ subsets: ["latin"]});
 
 export const metadata: Metadata = {
@@ -15,6 +17,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const layout = cookies().get("react-resizable-panels:layout");
+
+  let defaultLayout;
+  if (layout) {
+    defaultLayout = JSON.parse(layout.value);
+  }
   return (
 
 <html lang="en">
