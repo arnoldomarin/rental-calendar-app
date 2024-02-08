@@ -50,9 +50,9 @@ import { Label } from "@/components/ui/label";
 // FIXME: https://twitter.com/lemcii/status/1659649371162419202?s=46&t=gqNnMIjMWXiG2Rbrr5gT6g
 // Removing states would help maybe?
 
-type Framework = Record<"value" | "label" | "color" | "type", string>;
+type Options = Record<"value" | "label" | "color" | "type", string>;
 
-const FRAMEWORKS = [
+const Options = [
   {
     value: "Edmonton West",
     label: "Edmonton West",
@@ -89,7 +89,7 @@ const FRAMEWORKS = [
     color: "#8b5cf6",
     type: "normal"
   },
-] satisfies Framework[];
+] satisfies Options[];
 
 const badgeStyle = (color: string) => ({
   borderColor: `${color}20`,
@@ -99,11 +99,11 @@ const badgeStyle = (color: string) => ({
 
 export function ShadMultiselect() {
   const inputRef = React.useRef<HTMLInputElement>(null);
-  const [frameworks, setFrameworks] = React.useState<Framework[]>(FRAMEWORKS);
+  const [frameworks, setFrameworks] = React.useState<Options[]>(Options);
   const [openCombobox, setOpenCombobox] = React.useState(false);
   const [openDialog, setOpenDialog] = React.useState(false);
   const [inputValue, setInputValue] = React.useState<string>("");
-  const [selectedValues, setSelectedValues] = React.useState<Framework[]>([FRAMEWORKS[0]]);
+  const [selectedValues, setSelectedValues] = React.useState<Options[]>([Options[0]]);
 
   const createFramework = (name: string) => {
     const newFramework = {
@@ -116,7 +116,7 @@ export function ShadMultiselect() {
     setSelectedValues((prev) => [...prev, newFramework]);
   };
 
-  const toggleFramework = (framework: Framework) => {
+  const toggleFramework = (framework: Options) => {
     setSelectedValues((currentFrameworks) =>
       !currentFrameworks.includes(framework)
         ? [...currentFrameworks, framework]
@@ -125,7 +125,7 @@ export function ShadMultiselect() {
     inputRef?.current?.focus();
   };
 
-  const updateFramework = (framework: Framework, newFramework: Framework) => {
+  const updateFramework = (framework: Options, newFramework: Options) => {
     setFrameworks((prev) =>
       prev.map((f) => (f.value === framework.value ? newFramework : f))
     );
@@ -134,7 +134,7 @@ export function ShadMultiselect() {
     );
   };
 
-  const deleteFramework = (framework: Framework) => {
+  const deleteFramework = (framework: Options) => {
     setFrameworks((prev) => prev.filter((f) => f.value !== framework.value));
     setSelectedValues((prev) =>
       prev.filter((f) => f.value !== framework.value)
@@ -197,7 +197,7 @@ export function ShadMultiselect() {
                       className={cn(
                         "mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-df-purple",
                         isActive
-                          ? "bg-df-purple text-primary-foreground"
+                          ? "bg-primary text-primary-foreground"
                           : "opacity-50 [&_svg]:invisible"
                       )}
                     >
@@ -328,7 +328,7 @@ const CommandItemCreate = ({
   onSelect,
 }: {
   inputValue: string;
-  frameworks: Framework[];
+  frameworks: Options[];
   onSelect: () => void;
 }) => {
   const hasNoFramework = !frameworks
@@ -359,7 +359,7 @@ const DialogListItem = ({
   color,
   onSubmit,
   onDelete,
-}: Framework & {
+}: Options & {
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   onDelete: () => void;
 }) => {
