@@ -204,8 +204,7 @@ const FiltersGroup = () => {
             <AccordionItem value="item-3">
                 <AccordionTrigger className='font-bold text-sm'>Vehicle Information</AccordionTrigger>
                 <AccordionContent>
-                Yes. It&apos;s animated by default, but you can disable it if you
-                prefer.
+                  Vehicle Information Dropdown
                 </AccordionContent>
             </AccordionItem>
         </Accordion>
