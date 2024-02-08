@@ -12,7 +12,7 @@ import MultiSelectDropdown from './MultiSelectDropdown';
 import SingleToggleFilters from './SingleToggleFilters';
 
 import { HiOutlineArrowCircleRight, HiOutlineArrowCircleUp, HiOutlineArrowCircleDown } from "react-icons/hi";
-import { FancyBox } from './FancyBox';
+import { ShadMultiselect } from './ShadMultiselect';
 
   
 
@@ -183,11 +183,11 @@ const FiltersGroup = () => {
             <AccordionItem value="item-1">
                 <AccordionTrigger className='font-bold text-sm'>Rental Location</AccordionTrigger>
                 <AccordionContent>
-                    <FormControl id="multiple-limit-tags">
+                    {/* <FormControl id="multiple-limit-tags">
                       <MultiSelectDropdown multiselectDropdown={companyMultiselectDropdown}/>
-                    </FormControl>
+                    </FormControl> */}
                     <FormControl id="multiple-limit-tags" className="mt-2">
-                      <FancyBox />
+                      <ShadMultiselect />
                       {/* <MultiSelectDropdown multiselectDropdown={branchMultiselectDropdown}/> */}
                     </FormControl>
                 </AccordionContent>

@@ -97,7 +97,7 @@ const badgeStyle = (color: string) => ({
   color,
 });
 
-export function FancyBox() {
+export function ShadMultiselect() {
   const inputRef = React.useRef<HTMLInputElement>(null);
   const [frameworks, setFrameworks] = React.useState<Framework[]>(FRAMEWORKS);
   const [openCombobox, setOpenCombobox] = React.useState(false);
@@ -169,7 +169,7 @@ export function FancyBox() {
             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-min-content p-0">
+        <PopoverContent className="p-0">
           <Command loop>
             <CommandInput
               ref={inputRef}
@@ -299,7 +299,7 @@ export function FancyBox() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-      <div className="relative mt-3 h-24 -mb-24 overflow-y-auto">
+      {/* <div className="relative mt-3 h-24 -mb-24 overflow-y-auto">
         {selectedValues.map(({ label, value, color }) => (
           <Badge
             key={value}
@@ -310,7 +310,7 @@ export function FancyBox() {
             {label}
           </Badge>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
