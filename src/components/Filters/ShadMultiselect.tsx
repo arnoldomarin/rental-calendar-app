@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Check, ChevronsUpDown, Edit2, Plane, Trash, Warehouse } from "lucide-react";
+import { Check, ChevronDown, ChevronUp, Edit2, Plane, Trash, Warehouse } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import {
@@ -166,7 +166,12 @@ export function ShadMultiselect() {
                 `${selectedValues[0].label} +${selectedValues.length}`}
                 {/* `${selectedValues[0].label} ${selectedValues.length} Branches selected`} */}
             </span>
-            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+            {!openCombobox && 
+              <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" /> 
+            }
+            {openCombobox && 
+              <ChevronUp className="ml-2 h-4 w-4 shrink-0 opacity-50" /> 
+            }
           </Button>
         </PopoverTrigger>
         <PopoverContent className="p-0">
