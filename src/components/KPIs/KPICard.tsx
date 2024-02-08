@@ -16,6 +16,7 @@ interface kpiCardProps {
     kpi: kpiProps;
 }
   
+  
 
 const KPICard = ({ kpi } :  kpiCardProps) => {
   return (
@@ -32,7 +33,7 @@ const KPICard = ({ kpi } :  kpiCardProps) => {
                             <span>{kpi.icon}</span>
                         }
                         {kpi.chartData &&
-                            <ResponsiveContainer width={'30%'} height={13} className='mt-2'>
+                            <ResponsiveContainer width={'35%'} height={13.5} className='mt-2'>
                                 <LineChart
                                     data={kpi.chartData}
                                     margin={{
@@ -48,7 +49,7 @@ const KPICard = ({ kpi } :  kpiCardProps) => {
                                     dataKey="rentals"
                                     stroke="#5665f0"
                                     activeDot={{
-                                        r: 1
+                                        r: 0.5
                                     }}
                                     />
                                     <Tooltip />
