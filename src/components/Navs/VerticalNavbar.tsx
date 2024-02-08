@@ -11,7 +11,6 @@ import {
 
 import Link from "next/link"
 import { cn } from "@/lib/utils";
-import { LucideIcon } from "lucide-react"
 import { buttonVariants } from '../ui/button';
 
 interface NavProps {

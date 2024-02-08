@@ -1,4 +1,5 @@
-import { ReactNode } from "react";
+import { CarFront, CircleDollarSign, LineChart, Store } from "lucide-react";
+import { ReactNode } from "react"; 
 
 export interface linkCardProps {
     title: string;
@@ -7,16 +8,17 @@ export interface linkCardProps {
 }
 
 export interface kpiProps {
-    title: string;
-    value: number;
-    valueComplimentString: string;
-    chartData?: KPIChartData[];
-    barData?: number;
-    totalBarData?: number;
-    footerTitleOne?: string;
-    footerNumOne?: number;
-    footerTitleTwo?: string;
-    footerNumTwo?: number;
+  title: string;
+  value: number;
+  valueComplimentString: string;
+  chartData?: KPIChartData[];
+  barData?: number;
+  totalBarData?: number;
+  footerTitleOne?: string;
+  footerNumOne?: number;
+  footerTitleTwo?: string;
+  footerNumTwo?: number;
+  icon?: ReactNode;  // Use ReactNode as the type for the icon property
 }
 
 export interface KPIChartData {
@@ -29,7 +31,7 @@ export interface multiselectDropdownProps {
     options: dropdownOptions[];
 }
 
-export interface dropdownOptions {
+export interface dropdownOptions  {
     title: string,
     year: number,
 }
@@ -538,6 +540,8 @@ export const rentalCalendarKpisDummy = [
       title: 'Starting Rentals',
       value: 26,
       valueComplimentString: 'rentals',
+      footerNumOne: 89,
+      footerTitleOne: ' Vehicles On Schedule',
       chartData: [
           {
               rentals: 50,
@@ -569,6 +573,8 @@ export const rentalCalendarKpisDummy = [
       title: 'Ending Rentals',
       value: 15,
       valueComplimentString: 'rentals',
+      footerNumOne: 89,
+      footerTitleOne: ' Vehicles On Schedule',
       chartData: 
       [
           {
@@ -601,44 +607,43 @@ export const rentalCalendarKpisDummy = [
       title: 'Vehicles Available',
       value: 335,
       valueComplimentString: 'vehicles',
-      barData: (335/1750)*100, 
-      totalBarData: 1750,
       footerNumOne: 361,
-      footerTitleOne: 'Service Due Vehicles',
-      footerNumTwo: 62,
-      footerTitleTwo: 'Gnd. Recall Vehicles'
+      footerTitleOne: '% from last month',
+      icon: <CarFront size={18} color="#6b7280" strokeWidth={1.5}/>
   },
   {    
       title: 'Vehicles On Rent',
       value: 781,
       valueComplimentString: 'vehicles',
-      barData: (781/1302)*100, 
-      totalBarData: 1302,
-      footerNumOne: 361,
-      footerTitleOne: 'Vehicles On Schedule',
-      footerNumTwo: 62,
-      footerTitleTwo: 'Past Due Vehicles'
+      footerNumOne: 89,
+      footerTitleOne: ' Vehicles On Schedule',
+      icon: <CircleDollarSign size={18} color="#6b7280" strokeWidth={1.5}/> 
   },
+//   {    
+//     title: 'Vehicles On Fleet',
+//     value: 1302,
+//     valueComplimentString: 'vehicles',
+//     barData: (1302/1750)*100, 
+//     totalBarData: 1750,
+//     footerNumOne: 361,
+//     footerTitleOne: 'Vehicles vs. Target',
+//     footerNumTwo: 62,
+//     footerTitleTwo: 'Vehicles vs. Last Year'
+// },
   {    
       title: 'Vehicles On Fleet',
       value: 1302,
       valueComplimentString: 'vehicles',
-      barData: (1302/1750)*100, 
-      totalBarData: 1750,
       footerNumOne: 361,
-      footerTitleOne: 'Vehicles vs. Target',
-      footerNumTwo: 62,
-      footerTitleTwo: 'Vehicles vs. Last Year'
+      footerTitleOne: ' Vehicles vs. Target',
+      icon: <Store size={18} color="#6b7280" strokeWidth={1.5}/> 
   },
   {    
       title: 'Rental Utilization',
       value: 1302,
       valueComplimentString: 'vehicles',
-      barData: (1302/1750)*100, 
-      totalBarData: 1750,
       footerNumOne: 361,
       footerTitleOne: 'Vehicles vs. Target',
-      footerNumTwo: 62,
-      footerTitleTwo: 'Vehicles vs. Last Year'
+      icon: <LineChart size={18} color="#6b7280" strokeWidth={1.5}/> 
   }
 ];

@@ -37,9 +37,6 @@ export default function RootLayout({
         <ResizableComponent>{children}</ResizableComponent>
       </div>
     </div>
-    <main className='p-5'>
-        {children}
-    </main>
 </body>
 </html>
   );

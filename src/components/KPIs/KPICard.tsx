@@ -10,7 +10,7 @@ import {
 import { kpiProps } from '@/types';
 
 import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts"
-import { Progress } from "@/components/ui/progress"
+import { Progress } from "@/components/ui/progress";
 
 interface kpiCardProps {
     kpi: kpiProps;
@@ -22,52 +22,58 @@ const KPICard = ({ kpi } :  kpiCardProps) => {
     <div className='w-full h-full'>
         <Card className='h-full p-5'>
             <CardHeader className='p-0'>
-                <CardTitle className='text-xs'>{kpi.title}</CardTitle>
+                <CardTitle className='flex flex-row justify-between align-middle items-center'>
+                    <div className='flex flex-col'>
+                        <div className='text-sm font-medium'>
+                            {kpi.title}
+                        </div>
+                    </div>
+                        {!kpi.chartData && !kpi.barData &&
+                            <span>{kpi.icon}</span>
+                        }
+                        {kpi.chartData &&
+                            <ResponsiveContainer width={'30%'} height={13} className='mt-2'>
+                                <LineChart
+                                    data={kpi.chartData}
+                                    margin={{
+                                    top: 4,
+                                    right: 7,
+                                    left: 7,
+                                    bottom: 0,
+                                    }}
+                                >
+                                    <Line
+                                    type="monotone"
+                                    strokeWidth={2}
+                                    dataKey="rentals"
+                                    stroke="#5665f0"
+                                    activeDot={{
+                                        r: 1
+                                    }}
+                                    />
+                                    <Tooltip />
+                                </LineChart>
+                                {/* <AreaChart
+                                    width={500}
+                                    height={400}
+                                    data={kpi.chartData}
+                                    margin={{
+                                        top: 10,
+                                        right: 30,
+                                        left: 0,
+                                        bottom: 0,
+                                    }}
+                                    >
+                                    <Tooltip />
+                                    <Area type="monotone" dataKey="rentals" stroke="#5665f0" fill="#5665f0" />
+                                    </AreaChart> */}
+                            </ResponsiveContainer>
+                        }
+                </CardTitle>
             </CardHeader>
             <CardContent className='flex flex-col p-0'>
-                <div className='flex'>
-                    <p className='pe-2 font-bold text-2xl'>{kpi.value}</p>
-                    {/* <p className='text-xs self-end mb-1'>{kpi.valueComplimentString}</p> */}
-                </div>
-                <div className='pt-1 h-full'>
-                    {kpi.chartData &&
-                        <ResponsiveContainer width={'99%'} height={80} className='mt-2'>
-                            <LineChart
-                                data={kpi.chartData}
-                                margin={{
-                                top: 5,
-                                right: 10,
-                                left: 10,
-                                bottom: 0,
-                                }}
-                            >
-                                <Line
-                                type="monotone"
-                                strokeWidth={2}
-                                dataKey="rentals"
-                                stroke="#5665f0"
-                                activeDot={{
-                                    r: 6
-                                }}
-                                />
-                                <Tooltip />
-                            </LineChart>
-                            {/* <AreaChart
-                                width={500}
-                                height={400}
-                                data={kpi.chartData}
-                                margin={{
-                                    top: 10,
-                                    right: 30,
-                                    left: 0,
-                                    bottom: 0,
-                                }}
-                                >
-                                <Tooltip />
-                                <Area type="monotone" dataKey="rentals" stroke="#5665f0" fill="#5665f0" />
-                                </AreaChart> */}
-                        </ResponsiveContainer>
-                    }
+                <p className='pe-2 font-bold text-2xl mt-2'>{kpi.value}</p>
+                <div className='h-full'>
                     {kpi.barData &&
                         <div>
                             <div className='flex flex-col'> 
@@ -96,6 +102,18 @@ const KPICard = ({ kpi } :  kpiCardProps) => {
                             </div>
                         </div>
                     }
+                    <div className='flex'>
+                        <p className='text-xs text-gray-500 self-end font-normal my-0'>
+                            {
+                                kpi.footerNumOne && kpi.footerNumOne > 0 ? 
+                                '+' + kpi.footerNumOne?.toLocaleString('en-US') + kpi.footerTitleOne
+                                : 
+                                kpi.footerNumOne && kpi.footerNumOne < 0 ? '-' + kpi.footerNumOne?.toLocaleString('en-US') + kpi.footerTitleOne
+                                :
+                                ''
+                            }
+                        </p>
+                    </div>
                 </div>
             </CardContent>
         </Card>
