@@ -14,7 +14,6 @@ import { CarFront, Receipt, BadgeDollarSign, GanttChartSquare, MenuSquare, HelpC
 import { Toggle } from "@/components/ui/toggle";
 import Navbar from '../Navbar';
 import MobileNav from '../Navs/MobileNav';
-import KPICards from '../KPIs/KPICards';
 
 interface ResizableComponentProps {
     children: React.ReactNode;
@@ -112,7 +111,7 @@ interface ResizableComponentProps {
                 </div>
             ) : (
                 <ResizablePanelGroup direction="horizontal" className='flex flex-col align-middle min-h-screen'>     
-                    <ResizablePanel minSize={navbarCollapsed ? 3.5 : 12} maxSize={navbarCollapsed ? 3.5 : 15} className='border smooth-transition'>
+                    <ResizablePanel defaultSize={12} minSize={navbarCollapsed ? 3.5 : 12} maxSize={navbarCollapsed ? 3.5 : 15} className='border smooth-transition'>
                         <div className="p-2 border-b">
                             <Toggle onPressedChange={(e) => handleChange(e)}><MenuSquare size={20} /></Toggle>
                         </div>  

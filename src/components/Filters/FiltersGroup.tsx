@@ -195,9 +195,9 @@ const FiltersGroup = () => {
             <AccordionItem value="item-2">
                 <AccordionTrigger className='font-bold text-sm'>Rental Information</AccordionTrigger>
                 <AccordionContent>
-                    <FormControl id="multiple-limit-tags" className="mt-2">
+                    {/* <FormControl id="multiple-limit-tags" className="mt-2">
                         <MultiSelectDropdown multiselectDropdown={rentalCustomerMultiselectDropdown}/>
-                    </FormControl>
+                    </FormControl> */}
                     <SingleToggleFilters singleToggleFilterGroup={rentalStatusFilterGroup} />
                 </AccordionContent>
             </AccordionItem>
