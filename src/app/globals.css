@@ -117,3 +117,47 @@
 .mobile-nav-components > *:not(:first-child) {
   align-self: flex-end;
 }
+
+.three-stage-filters {
+  background-color: white !important;
+  border: 1.5px solid #e3ebf6!important;
+  color: #000!important;
+  max-width: 100%!important;
+  width: 100%!important;
+  border-radius: 10px!important;
+  .state-value-icon-wrapper {
+      border-radius: 50%;
+      border: 1.5px solid transparent;
+      padding: 0.2rem;
+  }
+  &:hover{
+      transition-property: transform,background-color,border-color;
+      transition-duration: 0.15s;
+      cursor: pointer;
+  }
+  &.selected-card {
+      .state-value-icon-wrapper {
+          &.selected-icon {
+              background-color: rgba(74, 91, 239, 0.20);
+              border: 1.5px solid #5665F0;
+          }
+      }
+  }
+  &.excluded-card {
+      .state-value-icon-wrapper {
+          &.excluded-icon {
+              background-color: rgba(239, 74, 74, 0.45);
+              border: 1.5px solid #ef4a4a;
+          }
+      }
+  }
+  &.disabled-card {
+      .state-value-icon-wrapper {
+          &.disabled-icon {
+              background-color: #F2F2F2;
+              border: 1.5px solid #e3ebf6;
+          }
+      }
+  }
+
+}
