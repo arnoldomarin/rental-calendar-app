@@ -647,3 +647,23 @@ export const rentalCalendarKpisDummy = [
       icon: <LineChart size={18} color="#6b7280" strokeWidth={1.5}/> 
   }
 ];
+
+// Functions 
+export const triggerThreeStateFilter = (
+  setCheck: React.Dispatch<React.SetStateAction<number>>,
+  setCardSelected: React.Dispatch<React.SetStateAction<string>>,
+  check: number
+): void => {
+  setCheck((prevState) => (prevState + 1) % 3);
+
+  let newButtonState = (prevState: number) => (prevState + 1) % 3;
+  let newState = newButtonState(check);  // Call the function with the current state
+
+  if (newState === 0) {
+    setCardSelected('selected-card three-stage-filters');
+  } else if (newState === 1) {
+    setCardSelected('excluded-card three-stage-filters');
+  } else {
+    setCardSelected('disabled-card three-stage-filters');
+  }
+};

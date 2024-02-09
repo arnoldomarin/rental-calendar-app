@@ -11,14 +11,11 @@ import {
 import MultiSelectDropdown from './MultiSelectDropdown';
 import SingleToggleFilters from './SingleToggleFilters';
 
-import {
-  Card,
-  CardContent
-} from "@/components/ui/card"
-
 import { HiOutlineArrowCircleRight, HiOutlineArrowCircleUp, HiOutlineArrowCircleDown } from "react-icons/hi";
-import { Car, Store, CheckCircle2, Check, X, FilterX } from "lucide-react"; 
+import { Car, Store, CheckCircle2 } from "lucide-react"; 
 import { ShadMultiselect } from './ShadMultiselect';
+import ThreeStateFilter from './ThreeStateFilter';
+import { triggerThreeStateFilter } from '@/types';
 
 type Options = Record<"value" | "label" | "color" | "type", string>;
 
@@ -264,22 +261,8 @@ const FiltersGroup = () => {
       },
     ];
 
-    const [pastDueCheck, setPastDueCheck] = useState(2);
-    const [pastDueCardSelected, setPastDueCardSelected] = useState('selected-card three-stage-filters');
-    const triggerPastDueSelection = () => {
-      setPastDueCheck((prevState) => (prevState + 1) % 3);
-    
-      let newButtonState = (prevState: number) => (prevState + 1) % 3;
-      let newState = newButtonState(pastDueCheck);  // Call the function with the current state
-    
-      if (newState === 0) {
-        setPastDueCardSelected('selected-card three-stage-filters');
-      } else if (newState === 1) {
-        setPastDueCardSelected('excluded-card three-stage-filters');
-      } else {
-        setPastDueCardSelected('disabled-card three-stage-filters');
-      }
-    };
+    const [pastDueCheck, setPastDueCheck] = useState<number>(2);
+    const [pastDueCardSelected, setPastDueCardSelected] = useState<string>('selected-card three-stage-filters');
 
   return (
     <div className='pe-6'>
@@ -312,24 +295,13 @@ const FiltersGroup = () => {
                     <div className='mt-4'>
                       <span className='font-semibold text-xs'>Rental Details</span>
                       <SingleToggleFilters singleToggleFilterGroup={rentalDetailsFilterGroup} />
-                      <div onClick={() => triggerPastDueSelection()} title='Toggle Closed Rentals' className='mt-3'>
-                        <Card className={pastDueCardSelected}>
-                          <CardContent className='flex py-2 px-3 justify-between align-middle items-center'>
-                            <p className='mb-0 text-xs font-semibold'>Long-term Rentals</p>
-                            <div className='flex gap-3'>
-                              <div className='state-value-icon-wrapper selected-icon'>
-                                <Check size={18}/>
-                              </div>
-                              <div className='state-value-icon-wrapper excluded-icon'>
-                                <X size={18}/>
-                              </div>
-                              <div className='state-value-icon-wrapper disabled-icon'>
-                                <FilterX size={18}/>
-                              </div>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      </div>
+                      <ThreeStateFilter 
+                        triggerThreeStateFilter={triggerThreeStateFilter} 
+                        setFilterCheck={setPastDueCheck} 
+                        setCardSelected={setPastDueCardSelected} 
+                        filterCheck={pastDueCheck} 
+                        pastDueCardSelected={pastDueCardSelected}
+                      />
                     </div>
                 </AccordionContent>
             </AccordionItem>
