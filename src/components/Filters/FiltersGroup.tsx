@@ -12,6 +12,7 @@ import MultiSelectDropdown from './MultiSelectDropdown';
 import SingleToggleFilters from './SingleToggleFilters';
 
 import { HiOutlineArrowCircleRight, HiOutlineArrowCircleUp, HiOutlineArrowCircleDown } from "react-icons/hi";
+import { Car, Store, CheckCircle2 } from "lucide-react"; 
 import { ShadMultiselect } from './ShadMultiselect';
 
 type Options = Record<"value" | "label" | "color" | "type", string>;
@@ -148,9 +149,15 @@ const FiltersGroup = () => {
     const branchMultiselectDropdown = { title: 'Branch', options: top100Films };
     const rentalCustomerMultiselectDropdown = { title: 'Rental Customer', options: top100Films };
 
+    // Rental Status
     const [openRentals, setOpenRentals] = useState(true);
     const [startingRentals, setStartingRentals] = useState(true);
     const [endingRentals, setEndingRentals] = useState(true);
+    // Rental Details
+    const [pickUpsFilter, setPickUpsFilter] = useState(true);
+    const [deliveryFilter, setDeliveryFilter] = useState(true);
+    // Vehicle Status
+    const [availableFilter, setAvailableFilter] = useState(true);
 
     const rentalStatusFilterGroup = {
         sectionTitle: 'Rental Status',
@@ -174,6 +181,34 @@ const FiltersGroup = () => {
             icon: <HiOutlineArrowCircleDown size={30}/>
           }
         ]
+    };
+
+    const rentalDetailsFilterGroup = {
+      toggleFilters: [
+        {
+          title: 'Pick-Up',
+          isEnabled: pickUpsFilter,
+          setFilter: setPickUpsFilter,
+          icon: <Store size={30}/>
+        },
+        {
+          title: 'Delivery',
+          isEnabled: deliveryFilter,
+          setFilter: setDeliveryFilter,
+          icon: <Car size={30}/>
+        }
+      ]
+    };
+
+    const vehicleStatusFilterGroup = {
+      toggleFilters: [
+        {
+          title: 'Available',
+          isEnabled: availableFilter,
+          setFilter: setAvailableFilter,
+          icon: <CheckCircle2  size={30}/>
+        }
+      ]
     };
 
     const Companies: Options[] = [
@@ -248,13 +283,21 @@ const FiltersGroup = () => {
                         <MultiSelectDropdown multiselectDropdown={rentalCustomerMultiselectDropdown}/>
                     </FormControl> */}
                     <ShadMultiselect options={RentalBranches} dropdownName={'Rental Customer'} defaultOptionSelected={false}/>
-                    <SingleToggleFilters singleToggleFilterGroup={rentalStatusFilterGroup} />
+                    <div className='mt-4'>
+                      <span className='font-semibold text-xs'>Rental Status</span>
+                      <SingleToggleFilters singleToggleFilterGroup={rentalStatusFilterGroup} />
+                    </div>
+                    <div className='mt-4'>
+                      <span className='font-semibold text-xs'>Rental Details</span>
+                      <SingleToggleFilters singleToggleFilterGroup={rentalDetailsFilterGroup} />
+                    </div>
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
                 <AccordionTrigger className='font-bold text-sm'>Vehicle Information</AccordionTrigger>
                 <AccordionContent>
-                  Vehicle Information Dropdown
+                  <span className='font-semibold text-xs mb-1'>Vehicle Status</span>
+                  <SingleToggleFilters singleToggleFilterGroup={vehicleStatusFilterGroup} />
                 </AccordionContent>
             </AccordionItem>
         </Accordion>

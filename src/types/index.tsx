@@ -44,7 +44,7 @@ export interface singleToggleFilterProps {
 }
 
 export interface singleToggleFiltersGroupProps {
-    sectionTitle: string;
+    sectionTitle?: string;
     toggleFilters: singleToggleFilterProps[];
 }
 
