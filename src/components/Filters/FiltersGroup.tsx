@@ -261,8 +261,10 @@ const FiltersGroup = () => {
       },
     ];
 
-    const [pastDueCheck, setPastDueCheck] = useState<number>(2);
+    const [pastDueCheck, setPastDueCheck] = useState<number>(0);
     const [pastDueCardSelected, setPastDueCardSelected] = useState<string>('selected-card three-stage-filters');
+
+    console.log(pastDueCheck, pastDueCardSelected);
 
   return (
     <div className='pe-6'>
