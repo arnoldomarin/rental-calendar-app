@@ -139,7 +139,7 @@
       .state-value-icon-wrapper {
           &.selected-icon {
               background-color: rgba(74, 91, 239, 0.20);
-              border: 1.5px solid #5665F0;
+              /* border: 1.5px solid #5665F0; */
           }
       }
   }
@@ -147,7 +147,7 @@
       .state-value-icon-wrapper {
           &.excluded-icon {
               background-color: rgba(239, 74, 74, 0.45);
-              border: 1.5px solid #ef4a4a;
+              /* border: 1.5px solid #ef4a4a; */
           }
       }
   }
@@ -155,7 +155,7 @@
       .state-value-icon-wrapper {
           &.disabled-icon {
               background-color: #F2F2F2;
-              border: 1.5px solid #e3ebf6;
+              /* border: 1.5px solid #e3ebf6; */
           }
       }
   }
