@@ -49,44 +49,9 @@ import { Label } from "@/components/ui/label";
 
 type Options = Record<"value" | "label" | "color" | "type", string>;
 
-const Options = [
-  {
-    value: "Edmonton West",
-    label: "Edmonton West",
-    color: "#ef4444",
-    type: "normal"
-  },
-  {
-    value: "Edmonton Aiport",
-    label: "Edmonton South",
-    color: "#eab308",
-    type: "airport"
-  },
-  {
-    value: "Calgary",
-    label: "Calgary",
-    color: "#22c55e",
-    type: "normal"
-  },
-  {
-    value: "Vancouver Island",
-    label: "Vancouver Island",
-    color: "#06b6d4",
-    type: "normal"
-  },
-  {
-    value: "Winnipeg",
-    label: "Winnipeg",
-    color: "#3b82f6",
-    type: "normal"
-  },
-  {
-    value: "Leduc",
-    label: "Leduc",
-    color: "#8b5cf6",
-    type: "normal"
-  },
-] satisfies Options[];
+interface MyComponentProps {
+  options: Options[];
+}
 
 const badgeStyle = (color: string) => ({
   borderColor: `${color}20`,
@@ -94,13 +59,13 @@ const badgeStyle = (color: string) => ({
   color,
 });
 
-export function ShadMultiselect() {
+export const  ShadMultiselect: React.FC<MyComponentProps> = ({ options }) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
-  const [frameworks, setFrameworks] = React.useState<Options[]>(Options);
+  const [frameworks, setFrameworks] = React.useState<Options[]>(options);
   const [openCombobox, setOpenCombobox] = React.useState(false);
   const [openDialog, setOpenDialog] = React.useState(false);
   const [inputValue, setInputValue] = React.useState<string>("");
-  const [selectedValues, setSelectedValues] = React.useState<Options[]>([Options[0]]);
+  const [selectedValues, setSelectedValues] = React.useState<Options[]>([options[0]]);
 
   const createFramework = (name: string) => {
     const newFramework = {
