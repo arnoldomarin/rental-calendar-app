@@ -51,6 +51,8 @@ type Options = Record<"value" | "label" | "color" | "type", string>;
 
 interface MyComponentProps {
   options: Options[];
+  dropdownName: string;
+  defaultOptionSelected: boolean;
 }
 
 const badgeStyle = (color: string) => ({
@@ -59,13 +61,13 @@ const badgeStyle = (color: string) => ({
   color,
 });
 
-export const  ShadMultiselect: React.FC<MyComponentProps> = ({ options }) => {
+export const  ShadMultiselect: React.FC<MyComponentProps> = ({ options, dropdownName, defaultOptionSelected }) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
   const [frameworks, setFrameworks] = React.useState<Options[]>(options);
   const [openCombobox, setOpenCombobox] = React.useState(false);
   const [openDialog, setOpenDialog] = React.useState(false);
   const [inputValue, setInputValue] = React.useState<string>("");
-  const [selectedValues, setSelectedValues] = React.useState<Options[]>([options[0]]);
+  const [selectedValues, setSelectedValues] = React.useState<Options[] | [] >(defaultOptionSelected ? [options[0]]: []);
 
   const createFramework = (name: string) => {
     const newFramework = {
@@ -79,7 +81,7 @@ export const  ShadMultiselect: React.FC<MyComponentProps> = ({ options }) => {
   };
 
   const toggleFramework = (framework: Options) => {
-    setSelectedValues((currentFrameworks) =>
+    setSelectedValues((currentFrameworks: Options[]) =>
       !currentFrameworks.includes(framework)
         ? [...currentFrameworks, framework]
         : currentFrameworks.filter((l) => l.value !== framework.value)
@@ -109,8 +111,8 @@ export const  ShadMultiselect: React.FC<MyComponentProps> = ({ options }) => {
   };
 
   return (
-    <div className="flex flex-col w-full">
-      <span className='font-semibold text-xs mb-1'>Branch</span>
+    <div className="flex flex-col w-full mb-2">
+      <span className='font-semibold text-xs mb-1'>{dropdownName}</span>
       <Popover open={openCombobox} onOpenChange={onComboboxOpenChange}>
         <PopoverTrigger asChild>
           <Button
@@ -120,11 +122,11 @@ export const  ShadMultiselect: React.FC<MyComponentProps> = ({ options }) => {
             className="w-full justify-between text-foreground"
           >
             <span className="truncate">
-              {selectedValues.length === 0 && "Select a branch"}
-              {selectedValues.length === 1 && 
+              {selectedValues?.length === 0 && "Select a branch"}
+              {selectedValues?.length === 1 && 
                 <Badge className="me-1">{selectedValues[0].label}</Badge>
               }
-              {selectedValues.length >= 2 &&
+              {selectedValues && selectedValues.length >= 2 &&
               <span>
                 <Badge className="me-1">{selectedValues[0].label}</Badge>
                 +{selectedValues.length-1}</span>
@@ -148,7 +150,7 @@ export const  ShadMultiselect: React.FC<MyComponentProps> = ({ options }) => {
             />
             <CommandGroup className="max-h-[145px] overflow-auto">
               {frameworks.map((framework) => {
-                const isActive = selectedValues.includes(framework);
+                const isActive = (selectedValues as Options[]).includes(framework);
                 return (
                   <CommandItem
                     key={framework.value}
@@ -189,7 +191,7 @@ export const  ShadMultiselect: React.FC<MyComponentProps> = ({ options }) => {
               />
             </CommandGroup>
             <CommandSeparator alwaysRender />
-            {selectedValues.length > 0 && (
+            {selectedValues && selectedValues.length > 0 && (
               <>
                 <CommandSeparator />
                 <CommandGroup>

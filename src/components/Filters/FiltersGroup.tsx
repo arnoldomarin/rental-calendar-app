@@ -176,6 +176,15 @@ const FiltersGroup = () => {
         ]
     };
 
+    const Companies: Options[] = [
+      {
+        value: "TDF Group",
+        label: "TDF Group",
+        color: "#ef4444",
+        type: "normal"
+      }
+    ];
+
     const RentalBranches: Options[] = [
       {
         value: "Edmonton West",
@@ -225,10 +234,11 @@ const FiltersGroup = () => {
                     {/* <FormControl id="multiple-limit-tags">
                       <MultiSelectDropdown multiselectDropdown={companyMultiselectDropdown}/>
                     </FormControl> */}
-                    <FormControl id="multiple-limit-tags" className="mt-2">
-                      <ShadMultiselect options={RentalBranches}/>
-                      {/* <MultiSelectDropdown multiselectDropdown={branchMultiselectDropdown}/> */}
-                    </FormControl>
+                    <ShadMultiselect options={Companies} dropdownName={'Company'} defaultOptionSelected={true}/>
+                    <ShadMultiselect options={RentalBranches} dropdownName={'Branch'} defaultOptionSelected={true}/>
+                    {/* <FormControl id="multiple-limit-tags" className="mt-2">
+                      <MultiSelectDropdown multiselectDropdown={branchMultiselectDropdown}/>
+                    </FormControl> */}
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
@@ -237,6 +247,7 @@ const FiltersGroup = () => {
                     {/* <FormControl id="multiple-limit-tags" className="mt-2">
                         <MultiSelectDropdown multiselectDropdown={rentalCustomerMultiselectDropdown}/>
                     </FormControl> */}
+                    <ShadMultiselect options={RentalBranches} dropdownName={'Rental Customer'} defaultOptionSelected={false}/>
                     <SingleToggleFilters singleToggleFilterGroup={rentalStatusFilterGroup} />
                 </AccordionContent>
             </AccordionItem>
